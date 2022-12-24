@@ -1,5 +1,5 @@
 # 💫 About Me:
-I’m currently learning Java & Django<br><br>📫 How to reach me TG: @million_edition
+I’m currently learning Java & Django & C++<br><br>📫 How to reach me TG: @million_edition
 
 
 # 💻 Tech Stack:
