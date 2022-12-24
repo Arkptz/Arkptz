@@ -1,0 +1,505 @@
+{
+  "personal": {
+    "name": "Arkadiy Pechnikov",
+    "email": "arkptz@gmail.com",
+    "phone": "+7 *** *** ** **",
+    "telegram": "arkptz",
+    "github": "Arkptz",
+    "linkedin": "arkptz",
+    "location": "Remote / Open to Relocation",
+    "open_to": "Remote / Relocation (Cyprus, Georgia, Dubai, Deel)",
+    "hiring_notice": "For international companies: available via legal entities in Cyprus, Georgia, or Dubai. Deel also works.",
+    "avatar": "https://avatars.githubusercontent.com/u/58850875",
+    "tagline": "Building high-throughput distributed systems in Python & Rust"
+  },
+  "meta": {
+    "title": "Arkadiy Pechnikov | Senior Backend Engineer | Python & Rust",
+    "description": "Senior Backend Engineer & Tech Lead specializing in high-throughput distributed systems, crypto infrastructure, and trading platforms. Python, Rust, Kubernetes.",
+    "keywords": "Python, Rust, Senior Backend Engineer, Distributed Systems, Kubernetes, Microservices, FinTech, Crypto, FastAPI, Temporal.io, Docker, Tech Lead, Reverse Engineering, Terraform, NixOS, k3s, TimescaleDB, Burp Suite, WebSocket, WASM, nautilus-trader"
+  },
+  "seo": {
+    "title": "Arkadiy Pechnikov | Senior Backend Engineer | Python & Rust",
+    "description": "Senior Backend Engineer & Tech Lead specializing in high-throughput distributed systems, crypto infrastructure, and trading platforms. Python, Rust, Kubernetes.",
+    "og_image": "https://arkptz.github.io/Arkptz/og-image.png",
+    "json_ld": {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Arkadiy Pechnikov",
+      "jobTitle": "Senior Backend Engineer & Tech Lead",
+      "url": "https://arkptz.github.io/Arkptz",
+      "knowsAbout": ["Python", "Rust", "Distributed Systems", "Crypto Infrastructure", "Kubernetes", "Trading Systems"],
+      "sameAs": [
+        "https://github.com/Arkptz",
+        "https://linkedin.com/in/arkptz",
+        "https://t.me/arkptz"
+      ]
+    }
+  },
+  "titles": {
+    "backend_crypto": "Senior Python Backend Engineer | Crypto & Trading Infrastructure",
+    "backend_traditional": "Senior Python Backend Engineer | High-Load Distributed Systems",
+    "techlead_crypto": "Tech Lead | Python & Rust | Crypto Infrastructure & Trading Systems",
+    "techlead_traditional": "Tech Lead | Python | High-Load Systems & Distributed Architecture",
+    "cto": "CTO / VP Engineering | Building Engineering Teams & Trading Infrastructure",
+    "portfolio": "Senior Backend Engineer & Tech Lead"
+  },
+  "summaries": {
+    "backend_crypto": "Python backend engineer who builds systems that actually handle load. Scaled a Temporal.io platform from ~10 to 200 jobs/sec (20x), reverse-engineered a WASM captcha in Ghidra and rewrote it in Rust for a 20x speedup, and built an SDK generation pipeline that cut exchange integration from ~1 month to ~1 week across 20+ undocumented CEX APIs. Comfortable with Kubernetes, full observability stacks (Grafana/VictoriaMetrics/Loki), and enough reverse engineering - WebSocket protocols, smart contracts, WASM binaries - that picking up new tech is usually the easy part. After running a 9-person team as founding CTO, I'm focused on deep IC work inside a strong engineering org.",
+    "backend_traditional": "Python backend engineer who builds systems that actually handle load. Scaled a Temporal.io platform from ~10 to 200 jobs/sec (20x), wrote a Rust computation module for a 20x speedup over baseline, and built an automated API client pipeline (mitmproxy \u2192 OpenAPI \u2192 SDK) that cut third-party integration from ~1 month to ~1 week across 20+ undocumented APIs. Comfortable with Kubernetes, observability stacks (Grafana/VictoriaMetrics/Loki), and enough protocol reverse engineering and binary analysis that picking up unfamiliar systems is usually the easy part. After running a 9-person team as technical lead, I'm focused on deep IC work inside a strong engineering org.",
+    "techlead_crypto": "Engineering leader who still writes code. As founding CTO, built a 9-person team from zero and delivered a crypto trading platform on $100K - roughly a tenth of what competitors spent. Architected the SDK generation pipeline (mitmproxy \u2192 OpenAPI \u2192 auto-SDK) that turned 20+ undocumented exchange APIs into a week's work each instead of a month. Migrated a broken monolith to Temporal.io, pushing throughput 20x to 200 jobs/sec. Comfortable hiring, managing budgets, running code reviews, and jumping into Ghidra to reverse-engineer a WASM binary when the team needs it. Looking for a lead role where I can build teams and still shape the architecture.",
+    "techlead_traditional": "Engineering leader who still writes code. Built a 9-person team from zero and delivered a real-time data platform on $100K - roughly a tenth of what competitors spent. Architected an automated API client pipeline (mitmproxy \u2192 OpenAPI \u2192 SDK generation) that cut third-party integration from ~1 month to ~1 week across 20+ undocumented APIs. Migrated a failing monolith to Temporal.io, pushing throughput 20x to 200 jobs/sec. Comfortable hiring, managing budgets, running code reviews, and debugging protocol-level issues when the team needs it. Looking for a lead role where I can build teams and still shape the architecture.",
+    "cto": "Built a 9-person engineering team from zero as founding CTO of a crypto infrastructure startup - $100K annual budget, roughly a tenth of what competitors spent. Owned the full lifecycle: hiring pipeline, architecture, code review standards, CI/CD, delivery. When budget hit zero, assembled the investor pitch deck and led fundraising myself. Biggest lesson wasn't technical - written agreements, budget forecasting, and investor reporting are as critical as system design. Looking for CTO or VP Engineering where I can build engineering culture and ship at startup speed.",
+    "portfolio": "Backend engineer and tech lead building high-throughput systems in Python and Rust. 200 jobs/sec on Temporal.io, 20x Rust speedup from WASM reverse engineering, 20+ undocumented API integrations automated. Built and led a 9-person team on a $100K budget."
+  },
+  "stats": [
+    { "value": 200, "suffix": " jobs/sec", "label": "Throughput" },
+    { "value": 10, "suffix": "K+", "label": "Users Served" },
+    { "value": 9, "suffix": "", "label": "Engineers Led" },
+    { "value": 20, "suffix": "+", "label": "API Integrations" },
+    { "value": 20, "suffix": "x", "label": "Rust Speedup" },
+    { "value": 99, "suffix": "%", "label": "Uptime" }
+  ],
+  "readme": {
+    "subtitle": "High-throughput systems, reverse engineering, and the occasional Rust rewrite",
+    "currently": "Building quantitative backtesting infrastructure with 260M+ candles on TimescaleDB",
+    "highlights": [
+      "Scaled Temporal.io platform from 10 to 200 jobs/sec (20x) for 10K+ users",
+      "Reverse-engineered WASM captcha in Ghidra, rewrote solver in Rust - 20x faster",
+      "SDK pipeline: mitmproxy → OpenAPI → auto-SDK for 20+ undocumented APIs",
+      "Built 9-person team from zero on $100K budget - zero turnover",
+      "Rust data ingestion at 300 blk/s where Python couldn't keep up"
+    ],
+    "stack": "Python (FastAPI, asyncio) · Rust · Kubernetes · Temporal.io · PostgreSQL · Redis · TimescaleDB",
+    "cta": "Open to senior backend, infrastructure, and tech lead roles. Remote or relocation."
+  },
+  "skills": {
+    "languages": { "label": "Languages", "items": ["Python", "Rust", "JavaScript/TypeScript", "SQL"] },
+    "backend": { "label": "Frameworks & Libraries", "items": ["FastAPI", "aiohttp", "asyncio", "Celery", "Temporal.io", "Pydantic", "SQLAlchemy"] },
+    "databases": { "label": "Databases", "items": ["PostgreSQL", "Redis", "MySQL", "Elasticsearch", "TimescaleDB"] },
+    "infrastructure": { "label": "Cloud & DevOps", "items": ["Kubernetes", "Docker", "FluxCD", "GitHub Actions", "CI/CD", "Helm", "Cloudflare", "MinIO", "NixOS", "k3s", "Terraform"] },
+    "monitoring": { "label": "Observability", "items": ["Grafana", "Victoria Metrics", "Loki", "Sentry"] },
+    "blockchain": { "label": "Blockchain & DeFi", "items": ["Web3.py", "ethers.js", "EVM", "DeFi protocols (Uniswap, 1Inch, Stargate, LayerZero)", "TON SDK", "mitmproxy"] },
+    "leadership": { "label": "Leadership & Process", "items": ["Team Building (up to 9)", "Code Review", "Architecture Decisions", "Hiring", "Budget Management", "Agile"] },
+    "ml_data": { "label": "ML & Data", "items": ["PyTorch", "TensorFlow", "scikit-learn", "pandas", "numpy", "Feature Engineering", "LSTM/CNN"] },
+    "security": {
+      "label": "Security & Analysis",
+      "items": [
+        "Web Application Analysis (Burp Suite, Chrome DevTools)",
+        "JavaScript Deobfuscation",
+        "WebSocket Protocol Analysis",
+        "On-chain Transaction Analysis",
+        "ABI Encoding/Decoding",
+        "Traffic Analysis (mitmproxy)",
+        "WASM Binary Analysis (Ghidra)"
+      ]
+    }
+  },
+  "skills_by_resume": {
+    "backend_crypto": ["languages", "backend", "databases", "infrastructure", "monitoring", "blockchain", "security"],
+    "backend_traditional": ["languages", "backend", "databases", "infrastructure", "monitoring"],
+    "techlead_crypto": ["languages", "leadership", "backend", "infrastructure", "databases", "monitoring", "blockchain", "security"],
+    "techlead_traditional": ["languages", "leadership", "backend", "infrastructure", "databases", "monitoring"],
+    "cto": ["languages", "leadership", "backend", "infrastructure", "databases", "monitoring", "blockchain", "security"]
+  },
+  "experience": [
+    {
+      "company": "Fenixwb",
+      "product": "Wildberries slot booking service - 200 jobs/sec, 10K+ users",
+      "period": "Oct 2024 - Sep 2025",
+      "location": "Remote",
+      "titles": {
+        "crypto_ic": "Senior Backend Engineer (Contract)",
+        "traditional_ic": "Senior Backend Engineer (Contract)",
+        "crypto_lead": "Lead Backend Engineer",
+        "traditional_lead": "Lead Backend Engineer",
+        "cto": "Head of IT Infrastructure",
+        "portfolio": "Lead Backend Engineer (Contract)"
+      },
+      "bullets": [
+        {
+          "text": "Inherited an unstable monolith prototype pushing ~10 tasks/sec - redesigned the entire backend on Temporal.io with ~10 microservices integrated with Elasticsearch and MySQL",
+          "audience": "both",
+          "focus": "both",
+          "resumes": ["backend_crypto", "backend_traditional", "techlead_crypto", "techlead_traditional", "cto"]
+        },
+        {
+          "text": "Pushed throughput from 10 to 200 background jobs/sec (20x), the threshold that let the product handle real user load and start onboarding paying customers",
+          "audience": "both",
+          "focus": "both",
+          "resumes": ["backend_crypto", "backend_traditional", "techlead_crypto", "techlead_traditional", "cto"]
+        },
+        {
+          "text": "Disassembled a WASM captcha binary in Ghidra, then rewrote the solver in Rust - execution dropped from 2s to 0.1s (20x faster), giving clients higher booking success rates than competing bots",
+          "audience": "both",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional", "techlead_crypto", "techlead_traditional", "cto"]
+        },
+        {
+          "text": "Migrated from MongoDB to PostgreSQL - simpler queries, fewer ops headaches for a 3-person backend team",
+          "audience": "both",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional", "techlead_crypto", "techlead_traditional"]
+        },
+        {
+          "text": "Sourced and hired 2 engineers (backend + DevOps) from scratch, building the engineering function from zero - owned architecture calls, task allocation, and code review",
+          "audience": "both",
+          "focus": "leadership",
+          "resumes": ["techlead_crypto", "techlead_traditional", "cto"]
+        },
+        {
+          "text": "Traced a critical throughput bottleneck via hypothesis-driven load testing - the root cause fix is what took us from ~10 to 200 tasks/sec",
+          "audience": "both",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional"]
+        },
+        {
+          "text": "Went from zero monitoring to production-grade observability: Grafana + Victoria Metrics + Loki with custom dashboards and alerting - incidents detected in ~3 minutes vs previously hours, MTTR dropped from days to hours",
+          "audience": "both",
+          "focus": "both",
+          "resumes": ["backend_crypto", "backend_traditional", "techlead_crypto", "techlead_traditional", "cto"]
+        },
+        {
+          "text": "Chose to scrap the failing monolith for Temporal.io over incremental patches - the architectural call that enabled 10\u2192200 tasks/sec across ~10 services",
+          "audience": "both",
+          "focus": "leadership",
+          "resumes": ["techlead_crypto", "techlead_traditional", "cto"]
+        },
+        {
+          "text": "Built every infrastructure layer from a blank server: CI/CD, monitoring, deployment patterns - everything subsequent engineers inherited and kept using",
+          "audience": "both",
+          "focus": "leadership",
+          "resumes": ["cto"]
+        }
+      ],
+      "tech": ["Rust", "Python", "Temporal.io", "Elasticsearch", "MySQL", "PostgreSQL", "asyncio", "Grafana", "Victoria Metrics", "Loki", "Docker", "Kubernetes"],
+      "linkedin_skills": ["Python", "Rust", "Temporal.io", "Kubernetes", "System Design"],
+      "color": "primary"
+    },
+    {
+      "company": "Cryptosofters",
+      "product": "Multi-wallet orchestration platform with visual pipeline builder - near-production, drag-and-drop wallet operations",
+      "product_sanitized": "Distributed automation platform with visual workflow builder - near-production, drag-and-drop operation pipelines",
+      "period": "May 2023 - Nov 2024",
+      "location": "Remote (Dubai-based)",
+      "location_sanitized": "Remote",
+      "titles": {
+        "crypto_ic": "Senior Python Developer",
+        "traditional_ic": "Senior Python Developer / Technical Lead",
+        "crypto_lead": "Founding CTO / Technical Lead",
+        "traditional_lead": "Technical Lead",
+        "cto": "Founding CTO",
+        "portfolio": "Founding CTO / Technical Lead"
+      },
+      "turnaround_narrative": "Budget hit zero mid-project. Put together an investor pitch deck, led the fundraising conversations, and bought the team more runway. After that, formalized every agreement in writing and built a budget forecasting process - learned the hard way that operational hygiene is half the job.",
+      "lessons_learned": [
+        "Formalized all agreements in writing after nearly losing the project to a handshake deal",
+        "Built budget forecasting into every project kickoff - no more surprises at month 6",
+        "Created investor reporting cadence that kept stakeholders informed and reduced friction during fundraising"
+      ],
+      "bullets": [
+        {
+          "text": "Designed multi-wallet orchestration platform with drag-and-drop pipeline constructor - users configured chains of on-chain operations (swaps, bridges, contract calls) without code. Built to near-production before investment stopped",
+          "sanitized": "Designed distributed automation platform with drag-and-drop workflow constructor - users configured chains of multi-step operations without code. Built to near-production before investment stopped",
+          "audience": "crypto",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional", "techlead_crypto", "techlead_traditional", "cto"]
+        },
+        {
+          "text": "Under the hood: event-driven state machine with per-wallet operation queues, automatic retry with exponential backoff, and transaction rollback on partial failures - the engine that made drag-and-drop orchestration reliable enough for real money",
+          "sanitized": "Under the hood: event-driven state machine with per-entity operation queues, automatic retry with exponential backoff, and operation rollback on partial failures - the engine that made drag-and-drop orchestration reliable enough for production use",
+          "audience": "crypto",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional", "techlead_crypto", "techlead_traditional", "cto"]
+        },
+        {
+          "text": "Zero security incidents across the platform's lifetime. Architected per-user wallet isolation, credential management, and transaction signing in a multi-tenant environment where investor confidence hinged on it",
+          "sanitized": "Zero security incidents across the platform's lifetime. Architected per-user isolation, credential management, and operation signing in a multi-tenant environment where investor confidence hinged on it",
+          "audience": "crypto",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional", "techlead_crypto", "techlead_traditional", "cto"]
+        },
+        {
+          "text": "Reverse-engineered closed-source smart contracts via on-chain transaction analysis and ABI decoding - often the only way to integrate protocols with no SDK, no docs, and no public API",
+          "sanitized": "Reverse-engineered undocumented third-party services via traffic analysis and protocol inspection - often the only way to integrate systems with no SDK, no docs, and no public API",
+          "audience": "both",
+          "focus": "both",
+          "resumes": ["backend_crypto", "backend_traditional", "techlead_crypto", "techlead_traditional", "cto"]
+        },
+        {
+          "text": "Architected the SDK generation pipeline: mitmproxy traffic capture \u2192 OpenAPI spec \u2192 auto-generated Python SDK for 20+ CEX APIs. Cut exchange integration from ~1 month to ~1 week (75%) - the force multiplier that made a 9-person team viable on a $100K budget",
+          "sanitized": "Architected the automated API client pipeline: mitmproxy traffic capture \u2192 OpenAPI spec \u2192 type-safe Python SDK for 20+ undocumented third-party APIs. Cut integration from ~1 month to ~1 week (75%) - the force multiplier that made a 9-person team viable on a $100K budget",
+          "audience": "crypto",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional", "techlead_crypto", "techlead_traditional", "cto"]
+        },
+        {
+          "text": "Delivered 20+ DeFi protocol integrations (Uniswap, 1Inch, Stargate, LayerZero) with a unified interface via web3.py - per-protocol time dropped from ~1 week to ~1 day (~80%), and any team member could add protocols, not just the specialists",
+          "sanitized": "Integrated 20+ external service APIs with a unified interface - per-integration time dropped from ~1 week to ~1 day (~80%), and any team member could add services, not just the specialists",
+          "audience": "crypto",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional", "techlead_crypto", "techlead_traditional"]
+        },
+        {
+          "text": "9 engineers (4 backend, 3 frontend, 1 Solidity, 1 PM), $100K annual budget, zero turnover - kept the team together through a budget crisis that would've scattered most startups",
+          "sanitized": "9 engineers (4 backend, 3 frontend, 1 specialist, 1 PM), $100K annual budget, zero turnover - kept the team together through a budget crisis that would've scattered most startups",
+          "audience": "crypto",
+          "focus": "leadership",
+          "resumes": ["techlead_crypto", "techlead_traditional", "cto"]
+        },
+        {
+          "text": "Grew the team from 0 to 9: wrote job descriptions, ran technical interviews, onboarded everyone, and shaped engineering culture from day one",
+          "audience": "both",
+          "focus": "leadership",
+          "resumes": ["techlead_crypto", "techlead_traditional", "cto"]
+        },
+        {
+          "text": "Set up code review standards, CI/CD pipelines, sprint cadence, and knowledge-sharing sessions - bug escape rate dropped and delivery became predictable enough to commit to external timelines",
+          "audience": "both",
+          "focus": "leadership",
+          "resumes": ["techlead_crypto", "techlead_traditional", "cto"]
+        },
+        {
+          "text": "Runway hit zero. Assembled an investor pitch deck, led the fundraising conversations myself, and bought the team more time - the moment I learned operational discipline matters as much as architecture",
+          "audience": "both",
+          "focus": "leadership",
+          "resumes": ["techlead_crypto", "techlead_traditional", "cto"]
+        },
+        {
+          "text": "Introduced code review process and CI/CD pipelines for a team of 9 - regression bugs dropped noticeably and new engineers onboarded faster",
+          "audience": "both",
+          "focus": "both",
+          "resumes": ["backend_crypto", "backend_traditional"]
+        },
+        {
+          "text": "$100K annual budget - a fraction of industry standard. Made it work through ruthless prioritization and SDK automation that replaced what would've needed 4x the headcount",
+          "audience": "both",
+          "focus": "leadership",
+          "resumes": ["cto"]
+        },
+        {
+          "text": "Delegated tech lead responsibilities to a senior engineer once the team matured - shifted focus to investor relations, budget planning, and strategic direction",
+          "audience": "both",
+          "focus": "leadership",
+          "resumes": ["cto"]
+        }
+      ],
+      "tech": {
+        "crypto": ["Python", "Web3.py", "mitmproxy", "OpenAPI", "asyncio", "PostgreSQL", "Redis", "Docker"],
+        "traditional": ["Python", "mitmproxy", "OpenAPI", "asyncio", "PostgreSQL", "Redis", "Docker"]
+      },
+      "linkedin_skills": ["Python", "Team Leadership", "API Design", "System Architecture", "Distributed Systems"],
+      "color": "secondary"
+    },
+    {
+      "company": "Vitrinagram",
+      "product": "Telegram MiniApp e-commerce platform - multi-tenant storefronts, 1,000+ concurrent users per store",
+      "period": "Nov 2021 - Apr 2023",
+      "location": "Remote (Moscow-based)",
+      "titles": {
+        "crypto_ic": "Middle+ Python Developer / Tech Lead",
+        "traditional_ic": "Middle+ Python Developer / Tech Lead",
+        "crypto_lead": "Python Developer / Tech Lead",
+        "traditional_lead": "Python Developer / Tech Lead",
+        "cto": "Python Developer / Tech Lead",
+        "portfolio": "Python Developer / Tech Lead"
+      },
+      "bullets": [
+        {
+          "text": "Built multi-tenant Telegram MiniApp backends handling 1,000+ concurrent users per store - horizontal scaling via Celery + Kubernetes meant cost grew linearly with tenants, not exponentially",
+          "audience": "both",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional", "techlead_crypto", "techlead_traditional", "cto"]
+        },
+        {
+          "text": "Automated tenant provisioning: FluxCD + Cloudflare API pipeline, ~3 minutes from commit to live subdomain",
+          "audience": "both",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional", "techlead_crypto", "techlead_traditional"]
+        },
+        {
+          "text": "Developed an S3-compatible proxy API on MinIO for tenant-isolated file storage - eliminated the shared-storage security risk and cut costs vs managed S3",
+          "audience": "both",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional"]
+        },
+        {
+          "text": "Per-tenant observability out of the box: Grafana + Victoria Metrics + Loki + Sentry dashboards clients could use for self-service debugging - ~40% fewer support tickets once clients could self-debug",
+          "audience": "both",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional", "techlead_crypto", "techlead_traditional"]
+        },
+        {
+          "text": "Led backend development across a team of 7, owning architecture decisions for multi-tenant scalability, setting technical direction for the platform, and mentoring mid-level engineers through code review and design discussions that improved team velocity over two quarters",
+          "audience": "both",
+          "focus": "leadership",
+          "resumes": ["techlead_crypto", "techlead_traditional", "cto"]
+        },
+        {
+          "text": "Spotted a technical leadership vacuum that was slowing delivery - escalated to the CEO, which led to team restructuring and a noticeable improvement in sprint completion rates",
+          "audience": "both",
+          "focus": "leadership",
+          "resumes": ["techlead_crypto", "techlead_traditional", "cto"]
+        }
+      ],
+      "tech": ["Python", "FastAPI", "Celery", "PostgreSQL", "Redis", "Docker", "Kubernetes", "FluxCD", "Grafana", "Victoria Metrics", "Loki", "Sentry", "MinIO", "Cloudflare"],
+      "linkedin_skills": ["Python", "FastAPI", "Kubernetes", "Microservices", "Technical Leadership"],
+      "color": "primary"
+    },
+    {
+      "company": "Freelance",
+      "product": "Crypto infrastructure, trading systems, and data pipelines",
+      "product_sanitized": "High-throughput data processing, infrastructure automation, and backend systems",
+      "period": "Jan 2018 - Present",
+      "location": "",
+      "titles": {
+        "crypto_ic": "Python Backend Developer",
+        "traditional_ic": "Python Backend Developer",
+        "crypto_lead": "Python Backend Developer / Lead",
+        "traditional_lead": "Python Backend Developer / Lead",
+        "cto": "Python Backend Developer / Lead",
+        "portfolio": "Backend Developer / Lead"
+      },
+      "bullets": [
+        {
+          "text": "Built EVM wallet management system for a client with multiple investors: 2,000+ wallets, 5,000+ tx/day, fully autonomous - equivalent of eliminating a full-time ops person",
+          "sanitized": "Built distributed task orchestration system for a client with multiple investors: 2,000+ concurrent entities, 5,000+ operations/day, fully autonomous - equivalent of eliminating a full-time ops person",
+          "audience": "crypto",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional", "techlead_crypto", "techlead_traditional"]
+        },
+        {
+          "text": "Reverse-engineered TradingView's WebSocket protocol and deobfuscated their JavaScript - collected 260M candlesticks in ~1 week covering 20+ years of forex and crypto data. Comparable feeds charge $600+/month",
+          "sanitized": "Reverse-engineered a financial data provider's WebSocket protocol and deobfuscated their JavaScript - collected 260M+ time-series data points in ~1 week, spanning 20+ years of market data. Comparable feeds charge $600+/month",
+          "audience": "both",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional"]
+        },
+        {
+          "text": "Led 3 Go developers building a CEX arbitrage bot with sub-100ms execution latency - cross-language coordination (Python orchestration, Go hot path) where every millisecond was the difference between profit and a missed window",
+          "sanitized": "Led 3 Go developers building a low-latency data processing system with sub-100ms response times - cross-language coordination (Python orchestration, Go hot path) where milliseconds determined outcomes",
+          "audience": "crypto",
+          "focus": "leadership",
+          "resumes": ["backend_crypto", "backend_traditional", "techlead_crypto", "techlead_traditional", "cto"]
+        },
+        {
+          "text": "Portfolio managers needed consistent exposure across 10+ exchange accounts - built an automated replication system mirroring positions in real-time with near-zero drift between source and mirror",
+          "sanitized": "Operators needed consistent state across 10+ service accounts - built an automated replication system mirroring operations in real-time with near-zero drift between source and mirror",
+          "audience": "both",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional"]
+        },
+        {
+          "text": "Developed a USDT-TON payment gateway with near-instant confirmation for a gaming platform - settlements in seconds vs traditional processing delays (delivered, pre-launch)",
+          "sanitized": "Developed a digital payment gateway with near-instant confirmation for a gaming platform - settlements in seconds vs traditional processing delays (delivered, pre-launch)",
+          "audience": "both",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional"]
+        },
+        {
+          "text": "Chose Rust for the Polymarket transaction parser because Python couldn't sustain the throughput - 300 blk/s from distributed event sources, production data ingestion",
+          "sanitized": "Chose Rust for the high-throughput data ingestion service because Python couldn't sustain the throughput - 300 blk/s from distributed event sources, production ingestion pipeline",
+          "audience": "crypto",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional"]
+        },
+        {
+          "text": "Deployed single-node k3s on NixOS with declarative config, Terraform provisioning, and GitOps workflow - reproducible infra, entire cluster from zero in under an hour",
+          "audience": "both",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional", "techlead_crypto", "techlead_traditional"]
+        },
+        {
+          "text": "Provisioned Kubernetes clusters on Yandex Cloud and Hetzner using Terraform for multiple clients - standardized the infra setup, cut provisioning time across engagements",
+          "sanitized": "Provisioned Kubernetes clusters on cloud platforms using Terraform for multiple clients - standardized the infra setup, cut provisioning time across engagements",
+          "audience": "both",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional", "techlead_crypto", "techlead_traditional"]
+        },
+        {
+          "text": "Building quantitative backtesting infrastructure on nautilus-trader with 260M+ candles stored in TimescaleDB - time-series queries that would choke PostgreSQL run in seconds",
+          "sanitized": "Building quantitative backtesting infrastructure on nautilus-trader with 260M+ data points stored in TimescaleDB for strategy validation on financial markets",
+          "audience": "both",
+          "focus": "ic",
+          "resumes": ["backend_crypto", "backend_traditional"]
+        },
+        {
+          "text": "100% completion rate across 8+ freelance engagements. Repeat clients. Handled everything end-to-end - from initial scoping call to production handoff",
+          "audience": "both",
+          "focus": "leadership",
+          "resumes": ["techlead_crypto", "techlead_traditional", "cto"]
+        }
+      ],
+      "tech": {
+        "crypto": ["Python", "Rust", "JS/TS", "Web3.py", "ethers.js", "PostgreSQL", "Redis", "asyncio", "NixOS", "k3s", "Terraform", "TimescaleDB", "Docker"],
+        "traditional": ["Python", "Rust", "JS/TS", "PostgreSQL", "Redis", "asyncio", "NixOS", "k3s", "Terraform", "TimescaleDB", "Docker"]
+      },
+      "linkedin_skills": ["Python", "Rust", "PostgreSQL", "Blockchain", "System Design"],
+      "color": "secondary"
+    }
+  ],
+  "projects": [
+    {
+      "icon": "code",
+      "title": "SDK Generation Pipeline",
+      "title_sanitized": "Automated API Client Generation Pipeline",
+      "description": "The tool that made a 9-person team viable on $100K. Captures traffic via mitmproxy, extracts OpenAPI specs, generates type-safe Python SDKs - turned ~1-month exchange integrations into ~1-week tasks.",
+      "description_sanitized": "The tool that made a 9-person team viable on $100K. Captures traffic via mitmproxy, extracts OpenAPI specs, generates type-safe Python SDKs - turned ~1-month API integrations into ~1-week tasks.",
+      "metrics": [{ "label": "APIs", "value": "20+" }, { "label": "Process", "value": "Automated" }, { "label": "Impact", "value": "Core Product" }],
+      "tech": ["Python", "mitmproxy", "OpenAPI", "asyncio"],
+      "featured": true,
+      "color": "primary"
+    },
+    {
+      "icon": "bolt",
+      "title": "High-throughput Data Ingestion (Rust)",
+      "description": "Chose Rust because Python couldn't keep up. Ingests and parses 300 blk/s from distributed event sources in production - hot-path performance where throughput is the only constraint that matters.",
+      "metrics": [{ "label": "Throughput", "value": "300 blk/s" }, { "label": "Language", "value": "Rust" }, { "label": "Status", "value": "Production" }],
+      "tech": ["Rust", "PostgreSQL", "asyncio"],
+      "featured": true,
+      "color": "secondary"
+    },
+    {
+      "icon": "server",
+      "title": "Distributed Task Orchestration",
+      "description": "Autonomous system managing 2,000+ wallets with 5,000+ daily transactions - built for a client with multiple investors who needed zero-ops reliability.",
+      "description_sanitized": "Autonomous system managing 2,000+ concurrent stateful entities with 5,000+ daily operations - built for a client with multiple investors who needed zero-ops reliability.",
+      "metrics": [{ "label": "Entities", "value": "2,000+" }, { "label": "Daily TXs", "value": "5,000+" }, { "label": "Intervention", "value": "0%" }],
+      "tech": ["Python", "Web3.py", "asyncio", "PostgreSQL", "Redis"],
+      "tech_sanitized": ["Python", "asyncio", "PostgreSQL", "Redis"],
+      "featured": true,
+      "color": "primary"
+    },
+    {
+      "icon": "chart",
+      "title": "Real-time Monitoring Stack",
+      "description": "From zero monitoring to full observability: Grafana + Victoria Metrics + Loki with per-tenant isolation, custom dashboards, and alerting. Incidents went from 'someone noticed' to detected-in-minutes.",
+      "metrics": [{ "label": "Services", "value": "10+" }, { "label": "Users", "value": "10K+" }, { "label": "Uptime", "value": "99%" }],
+      "tech": ["Grafana", "Victoria Metrics", "Loki", "Sentry", "Kubernetes"],
+      "featured": true,
+      "color": "secondary"
+    }
+  ],
+  "education": [
+    { "title": "Machine Learning Specialization", "institution": "Stanford University (via Coursera)", "status": "2026" },
+    { "title": "Reinforcement Learning for Trading Strategies", "institution": "New York Institute of Finance", "status": "2026" },
+    { "title": "Using Machine Learning in Trading and Finance", "institution": "New York Institute of Finance", "status": "2026" }
+  ],
+  "languages": {
+    "russian": "Native",
+    "english": "B2"
+  },
+  "social": {
+    "github": "https://github.com/Arkptz",
+    "telegram": "https://t.me/arkptz",
+    "linkedin": "https://linkedin.com/in/arkptz",
+    "email": "mailto:arkptz@gmail.com"
+  },
+  "linkedin": {
+    "headline": "Tech Lead & Senior Backend Engineer | Python · Rust · Crypto Infrastructure | Ex-CTO | Trading Systems & DeFi",
+    "about": "When a WASM captcha was the last thing standing between our platform and 10K users, I disassembled it in Ghidra and rewrote the solver in Rust. Execution dropped from 2 seconds to 100 milliseconds.\n\nThat's the kind of problem I gravitate toward - the ones where you need to understand systems at the binary level to make them work at scale.\n\nAs a backend engineer and technical leader, I build high-throughput distributed systems in Python and Rust. At FenixWB, I inherited an unstable monolith doing ~10 tasks/sec and redesigned it on Temporal.io with ~10 microservices - pushing throughput to 200 jobs/sec (20x) and enabling the product to onboard paying customers.\n\nAt Cryptosofters, I was the founding CTO. Built a 9-person engineering team from zero on a $100K annual budget - roughly a tenth of what competitors spent. The force multiplier was an SDK generation pipeline I architected: mitmproxy traffic capture → OpenAPI spec → auto-generated Python SDK. It cut exchange integration from ~1 month to ~1 week across 20+ undocumented APIs.\n\nI'm comfortable across the stack: Kubernetes clusters on bare metal, full observability (Grafana/VictoriaMetrics/Loki), protocol reverse engineering, and enough Rust to reach for it when Python can't sustain the throughput - like the 300 blk/s data ingestion service I built for production.\n\nCurrently building quantitative backtesting infrastructure with 260M+ candles on TimescaleDB.\n\nNext step: a team that takes system design as seriously as I do. Open to senior backend, infrastructure, or tech lead roles - remote or relocation.",
+    "cta": "Open to senior backend, infrastructure, and tech lead roles. Remote or relocation. Reach me at arkptz@gmail.com or t.me/arkptz"
+  },
+  "analytics": {
+    "yandex_metrika_id": 108231618
+  }
+}

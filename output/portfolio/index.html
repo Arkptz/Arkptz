@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arkadiy Pechnikov | Senior Backend Engineer | Python & Rust</title>
+<meta name="description" content="Senior Backend Engineer & Tech Lead specializing in high-throughput distributed systems, crypto infrastructure, and trading platforms. Python, Rust, Kubernetes.">
+<meta name="theme-color" content="#F59E0B">
+<meta property="og:title" content="Arkadiy Pechnikov | Senior Backend Engineer | Python & Rust">
+<meta property="og:description" content="Senior Backend Engineer & Tech Lead specializing in high-throughput distributed systems, crypto infrastructure, and trading platforms. Python, Rust, Kubernetes.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://arkptz.github.io/Arkptz">
+<meta property="og:image" content="https://arkptz.github.io/Arkptz/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Arkadiy Pechnikov",
+  "jobTitle": "Senior Backend Engineer & Tech Lead",
+  "url": "https://arkptz.github.io/Arkptz",
+  "knowsAbout": ["Python", "Rust", "Distributed Systems", "Crypto Infrastructure", "Kubernetes", "Trading Systems"],
+  "sameAs": [
+    "https://github.com/Arkptz",
+    "https://linkedin.com/in/arkptz",
+    "https://t.me/arkptz"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#050508;--bg-card:#0a0a10;--bg-hover:rgba(245,158,11,0.03);
+  --border:#111118;--border-accent:#1a1a2e;
+  --text:#e5e5e5;--text-dim:#888;--text-muted:#555;--text-faint:#333;
+  --amber:#F59E0B;--cyan:#06B6D4;--green:#4ADE80;--red:#F87171;--purple:#A78BFA;
+  --mono:'JetBrains Mono','Fira Code',monospace;
+  --sans:'IBM Plex Sans','Inter',-apple-system,sans-serif;
+}
+html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:#1a1a2e #050508}
+body{font-family:var(--mono);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+::selection{background:rgba(245,158,11,0.2);color:#fff}
+.container{max-width:800px;margin:0 auto;padding:0 24px;position:relative;z-index:10}
+section{padding:48px 0;border-top:1px solid var(--border)}
+section:first-of-type{border-top:none}
+.glow-tr{position:fixed;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(245,158,11,0.04) 0%,transparent 70%);pointer-events:none;z-index:0}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;padding:12px 24px;background:rgba(5,5,8,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);z-index:1000;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-size:13px;color:var(--green)}.nav-logo .s{color:var(--text-muted)}
+.nav-links{display:flex;gap:20px;align-items:center}
+.nav-links a{color:var(--text-muted);font-size:12px;text-decoration:none;transition:color .2s;letter-spacing:.5px}
+.nav-links a:hover{color:var(--amber)}
+.terminal-toggle{font-size:11px;color:var(--green);background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.2);border-radius:4px;padding:4px 10px;cursor:pointer;transition:all .2s;font-family:var(--mono)}
+.terminal-toggle:hover{background:rgba(74,222,128,0.15);border-color:rgba(74,222,128,0.4)}
+@media(max-width:640px){.nav-links a:not(.terminal-toggle-wrap){display:none}}
+
+/* Hero */
+header.hero{padding:100px 0 48px}
+.hero-label{font-size:11px;color:var(--text-muted);letter-spacing:2px;margin-bottom:12px;text-transform:uppercase}
+.hero h1{font-size:clamp(28px,6vw,40px);font-weight:700;color:var(--amber);letter-spacing:-1px;line-height:1.2;font-family:var(--sans);margin:0}
+.hero-subtitle{color:var(--text-dim);font-size:14px;margin-top:8px;line-height:1.6;max-width:620px;font-family:var(--sans)}
+.hero-tagline{color:var(--text-muted);font-size:12px;margin-top:4px}
+
+/* Contact pills */
+.contact-row{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.contact-pill{font-size:12px;color:var(--cyan);text-decoration:none;padding:4px 12px;border:1px solid rgba(6,182,212,0.2);border-radius:4px;transition:all .2s;font-family:var(--mono)}
+.contact-pill:hover{background:rgba(6,182,212,0.08);border-color:rgba(6,182,212,0.4)}
+
+/* Resume buttons */
+.resume-row{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.resume-btn{font-size:11px;color:var(--purple);text-decoration:none;padding:5px 14px;border:1px solid rgba(167,139,250,0.25);border-radius:4px;transition:all .2s;font-weight:500;font-family:var(--mono)}
+.resume-btn:hover{background:rgba(167,139,250,0.1);border-color:rgba(167,139,250,0.5)}
+
+/* Metrics */
+.metrics-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px;margin-top:28px;padding:16px;background:var(--bg-hover);border:1px solid var(--border);border-radius:6px}
+.metric-item{text-align:center}
+.metric-val{font-size:22px;font-weight:700;color:var(--amber);font-family:var(--sans)}
+.metric-label{font-size:10px;color:var(--text-muted);margin-top:2px;letter-spacing:.5px}
+
+/* Sections */
+.section-cmd{font-size:11px;color:var(--text-muted);letter-spacing:2px;margin-bottom:6px;font-family:var(--mono)}
+.section-title{font-size:20px;font-weight:600;color:var(--text);margin:0 0 24px;font-family:var(--sans)}
+
+/* Git log experience */
+.commit{padding:14px 20px;margin-bottom:2px;cursor:pointer;position:relative;border-left:2px solid var(--border-accent);transition:background .2s}
+.commit:hover{background:var(--bg-hover)}
+.commit.hl{border-left-color:var(--amber);background:rgba(245,158,11,0.02)}
+.commit.exp{background:rgba(245,158,11,0.04)}
+.commit-dot{position:absolute;left:-6px;top:20px;width:10px;height:10px;border-radius:50%;background:var(--text-faint);border:2px solid var(--text-muted)}
+.commit.hl .commit-dot{background:var(--amber);border-color:var(--amber);box-shadow:0 0 12px rgba(245,158,11,0.4)}
+.commit-header{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px}
+.ch{color:var(--amber);font-size:13px}
+.cd{color:var(--text-dim);font-size:12px}
+.cm{color:var(--text);font-weight:600;font-size:13px;margin-left:4px}
+.cc{color:var(--text-dim);font-size:12px;font-weight:400;margin-top:2px}
+.commit-hint{position:absolute;right:16px;top:18px;font-size:10px;color:var(--text-faint);transition:opacity .2s}
+.commit.exp .commit-hint{opacity:0}
+.tag-row{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.tag{font-size:10px;padding:2px 8px;border-radius:3px;background:rgba(6,182,212,0.08);color:var(--cyan);border:1px solid rgba(6,182,212,0.15)}
+.commit-details{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.commit.exp .commit-details{max-height:1000px}
+.commit-body{padding-top:12px}
+.cb-list{list-style:none;padding:0;margin:0}
+.cb-list li{font-size:13px;color:var(--text-dim);line-height:1.7;padding:3px 0 3px 18px;position:relative}
+.cb-list li::before{content:'\203A';position:absolute;left:0;color:var(--amber);font-weight:700}
+
+/* Skills */
+.skill-cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.skill-cat h4{font-size:12px;color:var(--amber);font-weight:500;margin-bottom:8px;letter-spacing:.5px;font-family:var(--sans)}
+.sct{display:flex;flex-wrap:wrap;gap:4px}
+.sctag{font-size:10px;padding:3px 8px;border-radius:3px;background:rgba(245,158,11,0.05);color:var(--text-dim);border:1px solid var(--border)}
+
+/* Projects */
+.pg{display:grid;gap:12px}
+.pc{padding:16px;border:1px solid var(--border);border-radius:6px;transition:all .3s}
+.pc:hover{border-color:rgba(245,158,11,0.2);background:var(--bg-hover)}
+.pt{font-size:14px;font-weight:600;color:var(--text);margin-bottom:6px;font-family:var(--sans)}
+.pd{font-size:12px;color:var(--text-dim);margin-bottom:10px;line-height:1.6}
+.pm{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.pmv{font-size:16px;font-weight:700;color:var(--amber);font-family:var(--sans)}
+.pml{font-size:9px;color:var(--text-muted);letter-spacing:.5px}
+
+/* Education */
+.edu{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:12px}
+.edu-ck{color:var(--green)}.edu-n{color:var(--text);font-weight:500}.edu-s{color:var(--text-muted)}.edu-o{color:var(--text-dim)}.edu-y{color:var(--text-muted);margin-left:auto}
+.lang-row{display:flex;gap:20px;font-size:12px;color:var(--text-dim);margin-top:16px}
+.lang-k{color:var(--text-muted)}.lang-v{color:var(--text)}
+
+/* Footer */
+footer{padding:40px 0 60px;border-top:1px solid var(--border);text-align:center}
+.fn{font-size:11px;color:var(--text-faint);margin-top:8px}
+.fn a{color:var(--text-muted);text-decoration:none}
+
+/* Reveal animations */
+.rv{opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s}
+.rv.vis{opacity:1;transform:translateY(0)}
+
+/* Terminal mode */
+#terminal-mode{display:none;background:#000;color:#4ADE80;font-family:var(--mono);font-size:14px;min-height:100vh;padding:60px 24px 24px}
+#terminal-mode.active{display:block}
+#normal-mode.hidden{display:none}
+.term-output{white-space:pre-wrap;line-height:1.7;max-width:800px;margin:0 auto}
+.term-input-line{display:flex;align-items:center;gap:8px;max-width:800px;margin:0 auto;margin-top:4px}
+.term-prompt{color:#4ADE80;white-space:nowrap}
+.term-input{background:transparent;border:none;color:#4ADE80;font-family:var(--mono);font-size:14px;outline:none;flex:1;caret-color:#4ADE80}
+.term-cursor{display:inline-block;width:8px;height:16px;background:#4ADE80;animation:blink 1s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.term-welcome{color:var(--text-muted);margin-bottom:16px}
+</style>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108231618', 'ym');
+    ym(108231618, 'init', {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
+        trackHash: true
+    });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/108231618" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<div class="glow-tr"></div>
+
+<nav>
+  <div class="nav-logo">~/arkptz<span class="s">/portfolio</span></div>
+  <div class="nav-links">
+    <a href="#experience">experience</a>
+    <a href="#skills">skills</a>
+    <a href="#projects">projects</a>
+    <a href="#contact">contact</a>
+    <button class="terminal-toggle" id="mode-toggle" onclick="toggleMode()">Terminal Mode</button>
+  </div>
+</nav>
+
+<!-- ==================== NORMAL MODE ==================== -->
+<div id="normal-mode">
+<div class="container">
+
+<header class="hero">
+  <div class="hero-label">Senior Backend Engineer & Tech Lead</div>
+  <h1>Arkadiy Pechnikov</h1>
+  <p class="hero-subtitle">Building high-throughput distributed systems in Python & Rust</p>
+  <p class="hero-tagline">Remote / Relocation (Cyprus, Georgia, Dubai, Deel)</p>
+
+  <div class="contact-row">
+    <a class="contact-pill" href="https://github.com/Arkptz">GitHub</a>
+    <a class="contact-pill" href="https://linkedin.com/in/arkptz">LinkedIn</a>
+    <a class="contact-pill" href="https://t.me/arkptz">Telegram</a>
+    <a class="contact-pill" href="mailto:arkptz@gmail.com">Email</a>
+  </div>
+
+  <div class="resume-row">
+    <a class="resume-btn" href="https://github.com/Arkptz/Arkptz/raw/main/output/Arkadiy_Pechnikov_Resume_Backend_Crypto.pdf" download>Backend (Crypto)</a>
+    <a class="resume-btn" href="https://github.com/Arkptz/Arkptz/raw/main/output/Arkadiy_Pechnikov_Resume_Backend.pdf" download>Backend</a>
+    <a class="resume-btn" href="https://github.com/Arkptz/Arkptz/raw/main/output/Arkadiy_Pechnikov_Resume_TechLead_Crypto.pdf" download>Tech Lead (Crypto)</a>
+    <a class="resume-btn" href="https://github.com/Arkptz/Arkptz/raw/main/output/Arkadiy_Pechnikov_Resume_TechLead.pdf" download>Tech Lead</a>
+    <a class="resume-btn" href="https://github.com/Arkptz/Arkptz/raw/main/output/Arkadiy_Pechnikov_Resume_CTO.pdf" download>CTO</a>
+  </div>
+
+  <div class="metrics-bar">
+    
+    <div class="metric-item"><div class="metric-val">200 jobs/sec</div><div class="metric-label">Throughput</div></div>
+    
+    <div class="metric-item"><div class="metric-val">10K+</div><div class="metric-label">Users Served</div></div>
+    
+    <div class="metric-item"><div class="metric-val">9</div><div class="metric-label">Engineers Led</div></div>
+    
+    <div class="metric-item"><div class="metric-val">20+</div><div class="metric-label">API Integrations</div></div>
+    
+    <div class="metric-item"><div class="metric-val">20x</div><div class="metric-label">Rust Speedup</div></div>
+    
+    <div class="metric-item"><div class="metric-val">99%</div><div class="metric-label">Uptime</div></div>
+    
+  </div>
+</header>
+
+<!-- Experience -->
+<section id="experience">
+  <div class="section-cmd">$ git log --career --oneline --stat</div>
+  <h2 class="section-title">Work Experience</h2>
+
+  
+  <article class="commit hl" onclick="this.classList.toggle('exp')">
+    <div class="commit-dot"></div>
+    <div class="commit-header">
+      <span class="ch">a3f7c1e</span>
+      <span class="cd">Oct 2024 - Sep 2025</span>
+      <span class="cm">Lead Backend Engineer (Contract)</span>
+    </div>
+    <div class="cc">Fenixwb &mdash; Wildberries slot booking service - 200 jobs/sec, 10K+ users &middot; Remote</div>
+    <div class="commit-hint">expand</div>
+    <div class="commit-details"><div class="commit-body">
+      <ul class="cb-list">
+        
+        
+        <li>Inherited an unstable monolith prototype pushing ~10 tasks/sec - redesigned the entire backend on Temporal.io with ~10 microservices integrated with Elasticsearch and MySQL</li>
+        
+        
+        
+        <li>Pushed throughput from 10 to 200 background jobs/sec (20x), the threshold that let the product handle real user load and start onboarding paying customers</li>
+        
+        
+        
+        <li>Disassembled a WASM captcha binary in Ghidra, then rewrote the solver in Rust - execution dropped from 2s to 0.1s (20x faster), giving clients higher booking success rates than competing bots</li>
+        
+        
+        
+        <li>Migrated from MongoDB to PostgreSQL - simpler queries, fewer ops headaches for a 3-person backend team</li>
+        
+        
+        
+        <li>Sourced and hired 2 engineers (backend + DevOps) from scratch, building the engineering function from zero - owned architecture calls, task allocation, and code review</li>
+        
+        
+        
+        <li>Traced a critical throughput bottleneck via hypothesis-driven load testing - the root cause fix is what took us from ~10 to 200 tasks/sec</li>
+        
+        
+        
+        <li>Went from zero monitoring to production-grade observability: Grafana + Victoria Metrics + Loki with custom dashboards and alerting - incidents detected in ~3 minutes vs previously hours, MTTR dropped from days to hours</li>
+        
+        
+        
+        <li>Chose to scrap the failing monolith for Temporal.io over incremental patches - the architectural call that enabled 10→200 tasks/sec across ~10 services</li>
+        
+        
+        
+        
+      </ul>
+      <div class="tag-row">
+        
+          
+        <span class="tag">Rust</span>
+        <span class="tag">Python</span>
+        <span class="tag">Temporal.io</span>
+        <span class="tag">Elasticsearch</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">Grafana</span>
+        <span class="tag">Victoria Metrics</span>
+        <span class="tag">Loki</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Kubernetes</span>
+        
+      </div>
+    </div></div>
+  </article>
+  
+  <article class="commit" onclick="this.classList.toggle('exp')">
+    <div class="commit-dot"></div>
+    <div class="commit-header">
+      <span class="ch">b8e2d4a</span>
+      <span class="cd">May 2023 - Nov 2024</span>
+      <span class="cm">Founding CTO / Technical Lead</span>
+    </div>
+    <div class="cc">Cryptosofters &mdash; Multi-wallet orchestration platform with visual pipeline builder - near-production, drag-and-drop wallet operations &middot; Remote (Dubai-based)</div>
+    <div class="commit-hint">expand</div>
+    <div class="commit-details"><div class="commit-body">
+      <ul class="cb-list">
+        
+        
+        <li>Designed multi-wallet orchestration platform with drag-and-drop pipeline constructor - users configured chains of on-chain operations (swaps, bridges, contract calls) without code. Built to near-production before investment stopped</li>
+        
+        
+        
+        <li>Under the hood: event-driven state machine with per-wallet operation queues, automatic retry with exponential backoff, and transaction rollback on partial failures - the engine that made drag-and-drop orchestration reliable enough for real money</li>
+        
+        
+        
+        <li>Zero security incidents across the platform's lifetime. Architected per-user wallet isolation, credential management, and transaction signing in a multi-tenant environment where investor confidence hinged on it</li>
+        
+        
+        
+        <li>Reverse-engineered closed-source smart contracts via on-chain transaction analysis and ABI decoding - often the only way to integrate protocols with no SDK, no docs, and no public API</li>
+        
+        
+        
+        <li>Architected the SDK generation pipeline: mitmproxy traffic capture → OpenAPI spec → auto-generated Python SDK for 20+ CEX APIs. Cut exchange integration from ~1 month to ~1 week (75%) - the force multiplier that made a 9-person team viable on a $100K budget</li>
+        
+        
+        
+        <li>Delivered 20+ DeFi protocol integrations (Uniswap, 1Inch, Stargate, LayerZero) with a unified interface via web3.py - per-protocol time dropped from ~1 week to ~1 day (~80%), and any team member could add protocols, not just the specialists</li>
+        
+        
+        
+        <li>9 engineers (4 backend, 3 frontend, 1 Solidity, 1 PM), $100K annual budget, zero turnover - kept the team together through a budget crisis that would've scattered most startups</li>
+        
+        
+        
+        <li>Grew the team from 0 to 9: wrote job descriptions, ran technical interviews, onboarded everyone, and shaped engineering culture from day one</li>
+        
+        
+        
+        <li>Set up code review standards, CI/CD pipelines, sprint cadence, and knowledge-sharing sessions - bug escape rate dropped and delivery became predictable enough to commit to external timelines</li>
+        
+        
+        
+        <li>Runway hit zero. Assembled an investor pitch deck, led the fundraising conversations myself, and bought the team more time - the moment I learned operational discipline matters as much as architecture</li>
+        
+        
+        
+        <li>Introduced code review process and CI/CD pipelines for a team of 9 - regression bugs dropped noticeably and new engineers onboarded faster</li>
+        
+        
+        
+        
+        
+        
+      </ul>
+      <div class="tag-row">
+        
+          
+        <span class="tag">Python</span>
+        <span class="tag">Web3.py</span>
+        <span class="tag">mitmproxy</span>
+        <span class="tag">OpenAPI</span>
+        <span class="tag">DeFi</span>
+        <span class="tag">asyncio</span>
+        <span class="tag">Docker</span>
+        
+      </div>
+    </div></div>
+  </article>
+  
+  <article class="commit" onclick="this.classList.toggle('exp')">
+    <div class="commit-dot"></div>
+    <div class="commit-header">
+      <span class="ch">c5a1f9b</span>
+      <span class="cd">Nov 2021 - Apr 2023</span>
+      <span class="cm">Python Developer / Tech Lead</span>
+    </div>
+    <div class="cc">Vitrinagram &mdash; Telegram MiniApp e-commerce platform - multi-tenant storefronts, 1,000+ concurrent users per store &middot; Remote (Moscow-based)</div>
+    <div class="commit-hint">expand</div>
+    <div class="commit-details"><div class="commit-body">
+      <ul class="cb-list">
+        
+        
+        <li>Built multi-tenant Telegram MiniApp backends handling 1,000+ concurrent users per store - horizontal scaling via Celery + Kubernetes meant cost grew linearly with tenants, not exponentially</li>
+        
+        
+        
+        <li>Automated tenant provisioning: FluxCD + Cloudflare API pipeline, ~3 minutes from commit to live subdomain</li>
+        
+        
+        
+        <li>Developed an S3-compatible proxy API on MinIO for tenant-isolated file storage - eliminated the shared-storage security risk and cut costs vs managed S3</li>
+        
+        
+        
+        <li>Per-tenant observability out of the box: Grafana + Victoria Metrics + Loki + Sentry dashboards clients could use for self-service debugging - ~40% fewer support tickets once clients could self-debug</li>
+        
+        
+        
+        <li>Led backend development across a team of 7, owning architecture decisions for multi-tenant scalability, setting technical direction for the platform, and mentoring mid-level engineers through code review and design discussions that improved team velocity over two quarters</li>
+        
+        
+        
+        <li>Spotted a technical leadership vacuum that was slowing delivery - escalated to the CEO, which led to team restructuring and a noticeable improvement in sprint completion rates</li>
+        
+        
+      </ul>
+      <div class="tag-row">
+        
+          
+        <span class="tag">FastAPI</span>
+        <span class="tag">Kubernetes</span>
+        <span class="tag">Celery</span>
+        <span class="tag">FluxCD</span>
+        <span class="tag">Grafana</span>
+        <span class="tag">Victoria Metrics</span>
+        <span class="tag">Loki</span>
+        <span class="tag">Sentry</span>
+        <span class="tag">MinIO</span>
+        <span class="tag">Cloudflare</span>
+        
+      </div>
+    </div></div>
+  </article>
+  
+  <article class="commit" onclick="this.classList.toggle('exp')">
+    <div class="commit-dot"></div>
+    <div class="commit-header">
+      <span class="ch">d2c8e7f</span>
+      <span class="cd">Jan 2018 - Present</span>
+      <span class="cm">Backend Developer / Lead</span>
+    </div>
+    <div class="cc">Freelance &mdash; Crypto infrastructure, trading systems, and data pipelines</div>
+    <div class="commit-hint">expand</div>
+    <div class="commit-details"><div class="commit-body">
+      <ul class="cb-list">
+        
+        
+        <li>Built EVM wallet management system for a client with multiple investors: 2,000+ wallets, 5,000+ tx/day, fully autonomous - equivalent of eliminating a full-time ops person</li>
+        
+        
+        
+        <li>Reverse-engineered TradingView's WebSocket protocol and deobfuscated their JavaScript - collected 260M candlesticks in ~1 week covering 20+ years of forex and crypto data. Comparable feeds charge $600+/month</li>
+        
+        
+        
+        <li>Led 3 Go developers building a CEX arbitrage bot with sub-100ms execution latency - cross-language coordination (Python orchestration, Go hot path) where every millisecond was the difference between profit and a missed window</li>
+        
+        
+        
+        <li>Portfolio managers needed consistent exposure across 10+ exchange accounts - built an automated replication system mirroring positions in real-time with near-zero drift between source and mirror</li>
+        
+        
+        
+        <li>Developed a USDT-TON payment gateway with near-instant confirmation for a gaming platform - settlements in seconds vs traditional processing delays (delivered, pre-launch)</li>
+        
+        
+        
+        <li>Chose Rust for the Polymarket transaction parser because Python couldn't sustain the throughput - 300 blk/s from distributed event sources, production data ingestion</li>
+        
+        
+        
+        <li>Deployed single-node k3s on NixOS with declarative config, Terraform provisioning, and GitOps workflow - reproducible infra, entire cluster from zero in under an hour</li>
+        
+        
+        
+        <li>Provisioned Kubernetes clusters on Yandex Cloud and Hetzner using Terraform for multiple clients - standardized the infra setup, cut provisioning time across engagements</li>
+        
+        
+        
+        <li>Building quantitative backtesting infrastructure on nautilus-trader with 260M+ candles stored in TimescaleDB - time-series queries that would choke PostgreSQL run in seconds</li>
+        
+        
+        
+        <li>100% completion rate across 8+ freelance engagements. Repeat clients. Handled everything end-to-end - from initial scoping call to production handoff</li>
+        
+        
+      </ul>
+      <div class="tag-row">
+        
+          
+        <span class="tag">Python</span>
+        <span class="tag">Rust</span>
+        <span class="tag">JS/TS</span>
+        <span class="tag">Web3.py</span>
+        <span class="tag">ethers.js</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Redis</span>
+        <span class="tag">asyncio</span>
+        <span class="tag">NixOS</span>
+        <span class="tag">k3s</span>
+        <span class="tag">Terraform</span>
+        <span class="tag">TimescaleDB</span>
+        
+      </div>
+    </div></div>
+  </article>
+  
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <div class="section-cmd">$ cat /etc/skills.d/*</div>
+  <h2 class="section-title">Technical Skills</h2>
+  <div class="skill-cats">
+    
+    
+    <div class="skill-cat rv">
+      <h4>Languages</h4>
+      <div class="sct">
+        
+        <span class="sctag">Python</span>
+        <span class="sctag">Rust</span>
+        <span class="sctag">JavaScript/TypeScript</span>
+        <span class="sctag">SQL</span>
+      </div>
+    </div>
+    
+    
+    <div class="skill-cat rv">
+      <h4>Frameworks & Libraries</h4>
+      <div class="sct">
+        
+        <span class="sctag">FastAPI</span>
+        <span class="sctag">aiohttp</span>
+        <span class="sctag">asyncio</span>
+        <span class="sctag">Celery</span>
+        <span class="sctag">Temporal.io</span>
+        <span class="sctag">Pydantic</span>
+        <span class="sctag">SQLAlchemy</span>
+      </div>
+    </div>
+    
+    
+    <div class="skill-cat rv">
+      <h4>Databases</h4>
+      <div class="sct">
+        
+        <span class="sctag">PostgreSQL</span>
+        <span class="sctag">Redis</span>
+        <span class="sctag">MySQL</span>
+        <span class="sctag">Elasticsearch</span>
+        <span class="sctag">TimescaleDB</span>
+      </div>
+    </div>
+    
+    
+    <div class="skill-cat rv">
+      <h4>Cloud & DevOps</h4>
+      <div class="sct">
+        
+        <span class="sctag">Kubernetes</span>
+        <span class="sctag">Docker</span>
+        <span class="sctag">FluxCD</span>
+        <span class="sctag">GitHub Actions</span>
+        <span class="sctag">CI/CD</span>
+        <span class="sctag">Helm</span>
+        <span class="sctag">Cloudflare</span>
+        <span class="sctag">MinIO</span>
+        <span class="sctag">NixOS</span>
+        <span class="sctag">k3s</span>
+        <span class="sctag">Terraform</span>
+      </div>
+    </div>
+    
+    
+    <div class="skill-cat rv">
+      <h4>Observability</h4>
+      <div class="sct">
+        
+        <span class="sctag">Grafana</span>
+        <span class="sctag">Victoria Metrics</span>
+        <span class="sctag">Loki</span>
+        <span class="sctag">Sentry</span>
+      </div>
+    </div>
+    
+    
+    <div class="skill-cat rv">
+      <h4>Blockchain & DeFi</h4>
+      <div class="sct">
+        
+        <span class="sctag">Web3.py</span>
+        <span class="sctag">ethers.js</span>
+        <span class="sctag">EVM</span>
+        <span class="sctag">DeFi protocols (Uniswap, 1Inch, Stargate, LayerZero)</span>
+        <span class="sctag">TON SDK</span>
+        <span class="sctag">mitmproxy</span>
+      </div>
+    </div>
+    
+    
+    <div class="skill-cat rv">
+      <h4>Security & Analysis</h4>
+      <div class="sct">
+        
+        <span class="sctag">Web Application Analysis (Burp Suite, Chrome DevTools)</span>
+        <span class="sctag">JavaScript Deobfuscation</span>
+        <span class="sctag">WebSocket Protocol Analysis</span>
+        <span class="sctag">On-chain Transaction Analysis</span>
+        <span class="sctag">ABI Encoding/Decoding</span>
+        <span class="sctag">Traffic Analysis (mitmproxy)</span>
+        <span class="sctag">WASM Binary Analysis (Ghidra)</span>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <div class="section-cmd">$ ls ~/projects --featured</div>
+  <h2 class="section-title">Featured Projects</h2>
+  <div class="pg">
+    
+    
+    <div class="pc rv">
+      <div class="pt">SDK Generation Pipeline</div>
+      <div class="pd">The tool that made a 9-person team viable on $100K. Captures traffic via mitmproxy, extracts OpenAPI specs, generates type-safe Python SDKs - turned ~1-month exchange integrations into ~1-week tasks.</div>
+      
+      <div class="pm">
+        
+        <div><div class="pmv">20+</div><div class="pml">APIs</div></div>
+        
+        <div><div class="pmv">Automated</div><div class="pml">Process</div></div>
+        
+        <div><div class="pmv">Core Product</div><div class="pml">Impact</div></div>
+        
+      </div>
+      
+      <div class="tag-row">
+        
+          
+        <span class="tag">Python</span>
+        <span class="tag">mitmproxy</span>
+        <span class="tag">OpenAPI</span>
+        <span class="tag">asyncio</span>
+        
+      </div>
+    </div>
+    
+    
+    
+    <div class="pc rv">
+      <div class="pt">High-throughput Data Ingestion (Rust)</div>
+      <div class="pd">Chose Rust because Python couldn't keep up. Ingests and parses 300 blk/s from distributed event sources in production - hot-path performance where throughput is the only constraint that matters.</div>
+      
+      <div class="pm">
+        
+        <div><div class="pmv">300 blk/s</div><div class="pml">Throughput</div></div>
+        
+        <div><div class="pmv">Rust</div><div class="pml">Language</div></div>
+        
+        <div><div class="pmv">Production</div><div class="pml">Status</div></div>
+        
+      </div>
+      
+      <div class="tag-row">
+        
+          
+        <span class="tag">Rust</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">asyncio</span>
+        
+      </div>
+    </div>
+    
+    
+    
+    <div class="pc rv">
+      <div class="pt">Distributed Task Orchestration</div>
+      <div class="pd">Autonomous system managing 2,000+ wallets with 5,000+ daily transactions - built for a client with multiple investors who needed zero-ops reliability.</div>
+      
+      <div class="pm">
+        
+        <div><div class="pmv">2,000+</div><div class="pml">Entities</div></div>
+        
+        <div><div class="pmv">5,000+</div><div class="pml">Daily TXs</div></div>
+        
+        <div><div class="pmv">0%</div><div class="pml">Intervention</div></div>
+        
+      </div>
+      
+      <div class="tag-row">
+        
+          
+        <span class="tag">Python</span>
+        <span class="tag">Web3.py</span>
+        <span class="tag">asyncio</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Redis</span>
+        
+      </div>
+    </div>
+    
+    
+    
+    <div class="pc rv">
+      <div class="pt">Real-time Monitoring Stack</div>
+      <div class="pd">From zero monitoring to full observability: Grafana + Victoria Metrics + Loki with per-tenant isolation, custom dashboards, and alerting. Incidents went from 'someone noticed' to detected-in-minutes.</div>
+      
+      <div class="pm">
+        
+        <div><div class="pmv">10+</div><div class="pml">Services</div></div>
+        
+        <div><div class="pmv">10K+</div><div class="pml">Users</div></div>
+        
+        <div><div class="pmv">99%</div><div class="pml">Uptime</div></div>
+        
+      </div>
+      
+      <div class="tag-row">
+        
+          
+        <span class="tag">Grafana</span>
+        <span class="tag">Victoria Metrics</span>
+        <span class="tag">Loki</span>
+        <span class="tag">Sentry</span>
+        <span class="tag">Kubernetes</span>
+        
+      </div>
+    </div>
+    
+    
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education">
+  <div class="section-cmd">$ cat /etc/certs.d/*</div>
+  <h2 class="section-title">Professional Development</h2>
+  
+  <div class="edu rv"><span class="edu-ck">&#10003;</span><span class="edu-n">Machine Learning Specialization</span><span class="edu-s">&mdash;</span><span class="edu-o">Stanford University (via Coursera)</span><span class="edu-y">2026</span></div>
+  
+  <div class="edu rv"><span class="edu-ck">&#10003;</span><span class="edu-n">Reinforcement Learning for Trading Strategies</span><span class="edu-s">&mdash;</span><span class="edu-o">New York Institute of Finance</span><span class="edu-y">2026</span></div>
+  
+  <div class="edu rv"><span class="edu-ck">&#10003;</span><span class="edu-n">Using Machine Learning in Trading and Finance</span><span class="edu-s">&mdash;</span><span class="edu-o">New York Institute of Finance</span><span class="edu-y">2026</span></div>
+  
+  <div style="margin-top:20px">
+    <div class="section-cmd">$ locale</div>
+    <div class="lang-row">
+      
+      <div><span class="lang-k">Russian:</span> <span class="lang-v">Native</span></div>
+      
+      <div><span class="lang-k">English:</span> <span class="lang-v">B1+ (strong reading/writing, conversational spoken)</span></div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="section-cmd">$ echo $CONTACT_INFO</div>
+  <h2 class="section-title">Let's Connect</h2>
+  <p style="color:var(--text-dim);font-size:13px;line-height:1.7;max-width:500px;margin-bottom:20px;font-family:var(--sans)">Open to senior backend, infrastructure, and tech lead roles. Remote or relocation. Reach me at arkptz@gmail.com or t.me/arkptz</p>
+  <div class="contact-row">
+    <a class="contact-pill" href="mailto:arkptz@gmail.com">Email</a>
+    <a class="contact-pill" href="https://t.me/arkptz">Telegram</a>
+    <a class="contact-pill" href="https://linkedin.com/in/arkptz">LinkedIn</a>
+    <a class="contact-pill" href="https://github.com/Arkptz">GitHub</a>
+  </div>
+</section>
+
+<footer>
+  <div class="fn">Rendered from <a href="https://github.com/Arkptz/Arkptz">data.json</a></div>
+</footer>
+
+</div>
+</div>
+
+<!-- ==================== TERMINAL MODE ==================== -->
+<div id="terminal-mode">
+  <div class="term-output" id="term-output">
+    <div class="term-welcome">Arkadiy Pechnikov | Senior Backend Engineer & Tech Lead
+Type "help" for available commands.
+</div>
+  </div>
+  <div class="term-input-line">
+    <span class="term-prompt">arkptz@portfolio:~$</span>
+    <input class="term-input" id="term-input" type="text" autocomplete="off" autofocus spellcheck="false">
+  </div>
+</div>
+
+<script>
+(function(){
+  // Mode toggle
+  window.toggleMode = function(){
+    var nm = document.getElementById('normal-mode');
+    var tm = document.getElementById('terminal-mode');
+    var btn = document.getElementById('mode-toggle');
+    if(tm.classList.contains('active')){
+      tm.classList.remove('active');
+      nm.classList.remove('hidden');
+      btn.textContent = 'Terminal Mode';
+    } else {
+      tm.classList.add('active');
+      nm.classList.add('hidden');
+      btn.textContent = 'Normal Mode';
+      document.getElementById('term-input').focus();
+    }
+  };
+
+  // Reveal animations
+  var ro = new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting) e.target.classList.add('vis')});
+  },{threshold:0.15});
+  document.querySelectorAll('.rv').forEach(function(el){ro.observe(el)});
+
+  // Staggered commit animations
+  document.querySelectorAll('.commit').forEach(function(c,i){
+    c.style.opacity='0';c.style.transform='translateX(-16px)';
+    c.style.transition='opacity .5s ease '+i*0.1+'s,transform .5s ease '+i*0.1+'s,background .2s';
+    var co = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateX(0)';co.unobserve(e.target)}
+      });
+    },{threshold:0.1});
+    co.observe(c);
+  });
+
+  // Terminal
+  var output = document.getElementById('term-output');
+  var input = document.getElementById('term-input');
+  var gh = 'Arkptz';
+  var base = 'https://github.com/'+gh+'/'+gh+'/raw/main/output/';
+
+  var commands = {
+    help: function(){
+      return 'Available commands:\n  about       - Summary\n  experience  - Work history\n  skills      - Technical skills\n  projects    - Featured projects\n  contact     - Contact information\n  resume TYPE - Download resume (backend-crypto, backend, techlead-crypto, techlead, cto)\n  clear       - Clear screen\n  exit        - Switch to normal mode';
+    },
+    about: function(){
+      return 'Arkadiy Pechnikov\nSenior Backend Engineer & Tech Lead\n\nBackend engineer and tech lead building high-throughput systems in Python and Rust. 200 jobs/sec on Temporal.io, 20x Rust speedup from WASM reverse engineering, 20+ undocumented API integrations automated. Built and led a 9-person team on a $100K budget.';
+    },
+    experience: function(){
+      return 'Work Experience\n' +
+
+        '\n[Oct 2024 - Sep 2025] Lead Backend Engineer (Contract) @ Fenixwb' +
+        '\n  Wildberries slot booking service - 200 jobs/sec, 10K+ users. Remote' +
+
+        '\n[May 2023 - Nov 2024] Founding CTO / Technical Lead @ Cryptosofters' +
+        '\n  Multi-wallet orchestration platform with visual pipeline builder - near-production, drag-and-drop wallet operations. Remote (Dubai-based)' +
+
+        '\n[Nov 2021 - Apr 2023] Python Developer / Tech Lead @ Vitrinagram' +
+        '\n  Telegram MiniApp e-commerce platform - multi-tenant storefronts, 1,000+ concurrent users per store. Remote (Moscow-based)' +
+
+        '\n[Jan 2018 - Present] Backend Developer / Lead @ Freelance' +
+        '\n  Crypto infrastructure, trading systems, and data pipelines' +
+
+        '';
+    },
+    skills: function(){
+      return 'Technical Skills\n' +
+
+        '\nLanguages: Python, Rust, JavaScript/TypeScript, SQL' +
+
+        '\nFrameworks & Libraries: FastAPI, aiohttp, asyncio, Celery, Temporal.io, Pydantic, SQLAlchemy' +
+
+        '\nDatabases: PostgreSQL, Redis, MySQL, Elasticsearch, TimescaleDB' +
+
+        '\nCloud & DevOps: Kubernetes, Docker, FluxCD, GitHub Actions, CI/CD, Helm, Cloudflare, MinIO, NixOS, k3s, Terraform' +
+
+        '\nObservability: Grafana, Victoria Metrics, Loki, Sentry' +
+
+        '\nBlockchain & DeFi: Web3.py, ethers.js, EVM, DeFi protocols (Uniswap, 1Inch, Stargate, LayerZero), TON SDK, mitmproxy' +
+
+        '\nSecurity & Analysis: Web Application Analysis (Burp Suite, Chrome DevTools), JavaScript Deobfuscation, WebSocket Protocol Analysis, On-chain Transaction Analysis, ABI Encoding/Decoding, Traffic Analysis (mitmproxy), WASM Binary Analysis (Ghidra)' +
+
+        '';
+    },
+    projects: function(){
+      return 'Featured Projects\n' +
+
+
+        '\n1. SDK Generation Pipeline\n   The tool that made a 9-person team viable on $100K. Captures traffic via mitmproxy, extracts OpenAPI specs, generates type-safe Python SDKs - turned ~1-month exchange integrations into ~1-week tasks.' +
+        '\n   [Python, mitmproxy, OpenAPI, asyncio]' +
+
+
+
+        '\n2. High-throughput Data Ingestion (Rust)\n   Chose Rust because Python couldn\'t keep up. Ingests and parses 300 blk/s from distributed event sources in production - hot-path performance where throughput is the only constraint that matters.' +
+        '\n   [Rust, PostgreSQL, asyncio]' +
+
+
+
+        '\n3. Distributed Task Orchestration\n   Autonomous system managing 2,000+ wallets with 5,000+ daily transactions - built for a client with multiple investors who needed zero-ops reliability.' +
+        '\n   [Python, Web3.py, asyncio, PostgreSQL, Redis]' +
+
+
+
+        '\n4. Real-time Monitoring Stack\n   From zero monitoring to full observability: Grafana + Victoria Metrics + Loki with per-tenant isolation, custom dashboards, and alerting. Incidents went from \'someone noticed\' to detected-in-minutes.' +
+        '\n   [Grafana, Victoria Metrics, Loki, Sentry, Kubernetes]' +
+
+
+        '';
+    },
+    contact: function(){
+      return 'Contact\n\n  Email:    arkptz@gmail.com\n  Telegram: t.me/arkptz\n  LinkedIn: linkedin.com/in/arkptz\n  GitHub:   github.com/Arkptz\n\nRemote / Relocation (Cyprus, Georgia, Dubai, Deel)';
+    },
+    clear: function(){output.innerHTML='';return null},
+    exit: function(){window.toggleMode();return null}
+  };
+
+  var resumeMap = {
+    'backend-crypto': 'Arkadiy_Pechnikov_Resume_Backend_Crypto.pdf',
+    'backend': 'Arkadiy_Pechnikov_Resume_Backend.pdf',
+    'techlead-crypto': 'Arkadiy_Pechnikov_Resume_TechLead_Crypto.pdf',
+    'techlead': 'Arkadiy_Pechnikov_Resume_TechLead.pdf',
+    'cto': 'Arkadiy_Pechnikov_Resume_CTO.pdf'
+  };
+
+  function processCommand(cmd){
+    cmd = cmd.trim().toLowerCase();
+    if(!cmd) return '';
+    if(cmd.startsWith('resume ')){
+      var type = cmd.slice(7).trim();
+      if(resumeMap[type]){
+        var a = document.createElement('a');
+        a.href = base + resumeMap[type];
+        a.download = resumeMap[type];
+        a.click();
+        return 'Downloading ' + resumeMap[type] + '...';
+      }
+      return 'Unknown resume type. Available: backend-crypto, backend, techlead-crypto, techlead, cto';
+    }
+    if(commands[cmd]) return commands[cmd]();
+    return 'Command not found: ' + cmd + '. Type "help" for available commands.';
+  }
+
+  if(input){
+    input.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){
+        var cmd = input.value;
+        var line = document.createElement('div');
+        line.innerHTML = '<span style="color:#4ADE80">arkptz@portfolio:~$</span> ' + cmd;
+        output.appendChild(line);
+        var result = processCommand(cmd);
+        if(result !== null && result !== undefined){
+          var out = document.createElement('div');
+          out.style.whiteSpace = 'pre-wrap';
+          out.style.marginBottom = '8px';
+          out.textContent = result;
+          output.appendChild(out);
+        }
+        input.value = '';
+        output.scrollTop = output.scrollHeight;
+      }
+    });
+  }
+
+  // Click terminal area to focus input
+  document.getElementById('terminal-mode').addEventListener('click', function(){
+    document.getElementById('term-input').focus();
+  });
+})();
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var YM_ID = 108231618;
+
+  document.querySelectorAll('.resume-btn, a[download]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      ym(YM_ID, 'reachGoal', 'resume_download', {
+        type: this.textContent.trim(),
+        href: this.getAttribute('href')
+      });
+    });
+  });
+
+  var contactLinks = {
+    'github.com': 'click_github',
+    'linkedin.com': 'click_linkedin',
+    't.me': 'click_telegram',
+    'mailto:': 'click_email'
+  };
+  Object.keys(contactLinks).forEach(function(domain) {
+    document.querySelectorAll('a[href*="' + domain + '"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        ym(YM_ID, 'reachGoal', contactLinks[domain]);
+      });
+    });
+  });
+
+  var fired50 = false, fired90 = false;
+  window.addEventListener('scroll', function() {
+    var pct = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100;
+    if (pct >= 50 && !fired50) { ym(YM_ID, 'reachGoal', 'scroll_50'); fired50 = true; }
+    if (pct >= 90 && !fired90) { ym(YM_ID, 'reachGoal', 'scroll_90'); fired90 = true; }
+  });
+
+  setTimeout(function() { ym(YM_ID, 'reachGoal', 'engaged_60s'); }, 60000);
+
+  var termToggle = document.querySelector('.terminal-toggle');
+  if (termToggle) {
+    termToggle.addEventListener('click', function() {
+      ym(YM_ID, 'reachGoal', 'toggle_terminal');
+    });
+  }
+});
+</script>
+</body>
+</html>

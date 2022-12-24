@@ -1,0 +1,70 @@
+[project]
+name = "resume-generator"
+version = "1.0.0"
+description = "PDF resume generator for Arkadiy Pechnikov"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "reportlab>=4.0.0",
+    "jinja2>=3.1",
+]
+
+[project.scripts]
+generate-resume = "resume_generator.generate_all:main"
+generate-backend-crypto = "resume_generator.generate_backend_crypto:generate"
+generate-backend = "resume_generator.generate_backend_traditional:generate"
+generate-techlead-crypto = "resume_generator.generate_techlead_crypto:generate"
+generate-techlead = "resume_generator.generate_techlead_traditional:generate"
+generate-cto = "resume_generator.generate_cto:generate"
+generate-portfolio = "resume_generator.generate_portfolio:generate"
+generate-linkedin = "resume_generator.generate_linkedin:generate"
+
+[build-system]
+requires = ["hatchling", 'editables']
+build-backend = "hatchling.build"
+[tool.hatch.build.targets.wheel]
+packages = [
+    "resume_generator"
+]
+
+[tool.uv]
+dev-dependencies = []
+
+
+
+[tool.ruff]
+line-length = 120
+indent-width = 4
+target-version = "py311"
+respect-gitignore = true
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "D100",    # Missing docstring in public module
+    "D101",    # Missing docstring in public class
+    "D103",    # Missing docstring in public function
+    "D104",    # Missing docstring in public package
+    "D107",    # Missing docstring in `__init__`
+    "D205",    # 1 blank line required between summary and description
+    "D400",    # First line should end with a period
+    "D401",    # First line should be in imperative mood
+    "D415",    # First line should end with period/question/exclamation
+    "ANN001",  # Missing type annotation for function argument
+    "ANN201",  # Missing return type annotation for public function
+    "ANN202",  # Missing return type annotation for private function
+    "ERA001",  # Found commented-out code
+    "PLR2004", # Magic value used in comparison
+    "S101",    # Use of `assert` detected
+    "INP001",  # Implicit namespace package
+    "T201",    # `print` found
+    "RUF001",  # String contains ambiguous characters
+    "RUF002",  # Docstring contains ambiguous characters
+    "RUF003",  # Comment contains ambiguous characters
+]
+fixable = ["ALL"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
