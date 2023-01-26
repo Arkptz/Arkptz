@@ -1,3 +1,4 @@
+![](https://visitor-badge.glitch.me/badge?page_id=Arkptz1.Arkptz1)
 # 💫 About Me:
 <font size =30> I’m currently learning Java & Django & C++ </font>
 # 📫 How to reach me:
