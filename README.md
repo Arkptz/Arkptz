@@ -33,7 +33,7 @@
 ## Other:
 ### ![Anaconda](https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&logo=anaconda&logoColor=white)   
 # 📊 GitHub Stats:
-![](https://github-readme-stats-malk.vercel.app/api?username=arkptz1&show_icons=true&theme=gotham
+![](https://github-readme-stats-malk.vercel.app/api?username=arkptz1&show_icons=true&theme=gotham)<br/>
 ![](https://github-readme-stats-malk.vercel.app/api?username=arkptz1&theme=dark&hide_border=false&include_all_commits=true&count_private=true)<br/>
 ![](https://github-readme-streak-stats.herokuapp.com/?user=arkptz1&theme=dark&hide_border=false)<br/>
 ![](https://github-readme-stats-malk.vercel.app/api/top-langs/?username=arkptz1&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
