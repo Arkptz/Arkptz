@@ -37,5 +37,5 @@
 ![](https://github-readme-stats-malk.vercel.app/api?username=arkptz&show_icons=true&theme=gotham)<br/>
 ![](https://github-readme-stats-malk.vercel.app/api?username=arkptz&theme=dark&hide_border=false&include_all_commits=true&count_private=true)<br/>
 ![](https://github-readme-streak-stats.herokuapp.com/?user=arkptz&theme=dark&hide_border=false)<br/>
-![](https://github-readme-stats-malk.vercel.app/api/top-langs/?username=arkptz1&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
+![](https://github-readme-stats-malk.vercel.app/api/top-langs/?username=arkptz&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
 
