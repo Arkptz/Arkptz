@@ -2,7 +2,7 @@
 # 💫 About Me:
 <font size =30> I’m currently learning Java & Django & C++ </font>
 # 📫 How to reach me:
-## <a href="https://t.me/Million_edition" target="blank"><img align="center" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="arkptz1" /></a> 
+## <a href="https://t.me/arkptz" target="blank"><img align="center" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="arkptz1" /></a> 
 
 
 
