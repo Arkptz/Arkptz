@@ -1,6 +1,6 @@
 ![](https://visitor-badge.glitch.me/badge?page_id=Arkptz.Arkptz)
 # 💫 About Me:
-<font size =30> I’m currently learning Java & Django & C++ </font>
+<font size =30> I’m currently learning Rust </font>
 # 📫 How to reach me:
 ## <a href="https://t.me/arkptz" target="blank"><img align="center" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="arkptz1" /></a> 
 
