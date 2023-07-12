@@ -1,4 +1,4 @@
-![](https://visitor-badge.glitch.me/badge?page_id=Arkptz.Arkptz)
+![](https://visitor-badge.glitch.me/badge?page_id=Arkptz1.Arkptz1)
 # 💫 About Me:
 <font size =30> I’m currently learning Rust </font>
 # 📫 How to reach me:
