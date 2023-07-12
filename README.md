@@ -1,4 +1,4 @@
-![](https://visitor-badge.glitch.me/badge?page_id=Arkptz1.Arkptz1)
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=arkptz&label=Profile%20views&color=0e75b6&style=flat" alt="arkptz" /> </p> 
 # 💫 About Me:
 <font size =30> I’m currently learning Rust </font>
 # 📫 How to reach me:
