@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arkady Pechnikov | Senior Software Engineer</title>
+    <meta name="description" content="Senior Software Engineer with 8 years of Python experience. High-load systems, crypto infrastructure, ML trading. 99% uptime, 10K+ users, 260M+ data points.">
+    <meta name="keywords" content="Python, Rust, Go, Backend, ML, Quant, Trading, DeFi, Kubernetes, High-load">
+    <meta name="theme-color" content="#7c3aed">
+    <meta property="og:title" content="Arkady Pechnikov | Senior Software Engineer">
+    <meta property="og:description" content="Senior Software Engineer with 8 years of Python experience. High-load systems, crypto infrastructure, ML trading. 99% uptime, 10K+ users, 260M+ data points.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --accent-primary: #7c3aed;
+            --accent-secondary: #06b6d4;
+            --border: #2a2a3a;
+            --gradient: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background animation */
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 20% 20%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-cta {
+            background: var(--gradient);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-cta:hover {
+            opacity: 0.9;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 .gradient {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .hero-description {
+            max-width: 600px;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .hero-contact {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-contact a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .hero-contact a:hover {
+            color: var(--accent-primary);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(124, 58, 237, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            padding: 0.875rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            border: 1px solid var(--border);
+            transition: border-color 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-primary);
+        }
+
+        /* Resume Downloads */
+        .resume-downloads {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .resume-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .resume-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .resume-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 0.6rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .resume-btn:hover {
+            border-color: var(--accent-primary);
+            background: var(--bg-secondary);
+            transform: translateY(-2px);
+        }
+
+        .resume-icon {
+            font-size: 1rem;
+        }
+
+        .resume-text {
+            font-weight: 500;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-title .gradient {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+        }
+
+        .skill-category h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--bg-secondary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            border: 1px solid var(--border);
+            transition: border-color 0.3s;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--accent-primary);
+        }
+
+        /* Experience */
+        .experience-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-item .company {
+            color: var(--accent-primary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        .experience-item li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .experience-item li::before {
+            content: "›";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+        }
+
+        .experience-item .tech {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+        }
+
+        .project-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .metrics {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            display: block;
+            font-weight: 700;
+            color: var(--accent-secondary);
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .tech-tag {
+            background: var(--bg-secondary);
+            padding: 0.25rem 0.6rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-secondary);
+        }
+
+        /* Education */
+        .education-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-item h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .education-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Contact */
+        .contact-section {
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .social-link:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            section { padding: 3rem 1rem; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <nav>
+        <div class="nav-logo">AP</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+        </div>
+        <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-badge">
+            <span class="dot"></span>
+            Available for opportunities
+        </div>
+        <h1>
+            Arkadiy<br>
+            <span class="gradient">Pechnikov</span>
+        </h1>
+        <p class="hero-subtitle">&gt; Senior Software Engineer</p>
+        <p class="hero-description">Building high-performance systems that scale</p>
+        <div class="hero-contact">
+            <span>📍 Russia (Remote / Relocation)</span>
+            <span>✉️ <a href="mailto:arkptz@gmail.com">arkptz@gmail.com</a></span>
+            <span>💻 <a href="https://github.com/Arkptz" target="_blank">github.com/Arkptz</a></span>
+        </div>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn-primary">Get in Touch</a>
+            <a href="https://github.com/Arkptz" class="btn-secondary" target="_blank" rel="noopener">View GitHub</a>
+        </div>
+
+        <div class="resume-downloads">
+            <p class="resume-label">📄 Download Resume:</p>
+            <div class="resume-buttons">
+                <a href="https://github.com/Arkptz/Arkptz/raw/main/output/Arkadiy_Pechnikov_Resume_Backend.pdf" class="resume-btn" target="_blank">
+                    <span class="resume-icon">⚡</span>
+                    <span class="resume-text">Backend</span>
+                </a>
+                <a href="https://github.com/Arkptz/Arkptz/raw/main/output/Arkadiy_Pechnikov_Resume_ML.pdf" class="resume-btn" target="_blank">
+                    <span class="resume-icon">🤖</span>
+                    <span class="resume-text">ML</span>
+                </a>
+                <a href="https://github.com/Arkptz/Arkptz/raw/main/output/Arkadiy_Pechnikov_Resume_Quant.pdf" class="resume-btn" target="_blank">
+                    <span class="resume-icon">📈</span>
+                    <span class="resume-text">Quant</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="section-header">
+            <span class="section-tag">&lt;about /&gt;</span>
+            <h2 class="section-title">Building <span class="gradient">High-Performance</span> Systems</h2>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Senior Software Engineer with 8 years of Python in production. Built systems processing 5,000+ daily transactions, serving 10,000 users at 99% uptime. Led infrastructure migrations, designed microservices architectures, and delivered 20+ DeFi protocol integrations. Now applying ML to quantitative trading with a self-collected 260M+ datapoint dataset.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat">
+            <span class="stat-value">8+</span>
+            <span class="stat-label">Years Experience</span>
+        </div><div class="stat">
+            <span class="stat-value">260M+</span>
+            <span class="stat-label">Data Points</span>
+        </div><div class="stat">
+            <span class="stat-value">20+</span>
+            <span class="stat-label">DeFi Protocols</span>
+        </div><div class="stat">
+            <span class="stat-value">99%</span>
+            <span class="stat-label">Uptime</span>
+        </div><div class="stat">
+            <span class="stat-value">5000+</span>
+            <span class="stat-label">Daily TXs</span>
+        </div><div class="stat">
+            <span class="stat-value">10000+</span>
+            <span class="stat-label">Users Served</span>
+        </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-header">
+            <span class="section-tag">&lt;skills /&gt;</span>
+            <h2 class="section-title">Technical <span class="gradient">Expertise</span></h2>
+        </div>
+
+        <div class="skills-grid">
+            
+            <div class="skill-category">
+                <h4>Languages</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python (8 years)</span><span class="skill-tag">Rust (2 years)</span><span class="skill-tag">Go</span><span class="skill-tag">JavaScript/TypeScript</span><span class="skill-tag">SQL</span>
+                </div>
+            </div>
+        
+            <div class="skill-category">
+                <h4>ML/Data</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">TensorFlow</span><span class="skill-tag">scikit-learn</span><span class="skill-tag">pandas</span><span class="skill-tag">numpy</span><span class="skill-tag">data pipelines</span><span class="skill-tag">feature engineering</span>
+                </div>
+            </div>
+        
+            <div class="skill-category">
+                <h4>Backend</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">FastAPI</span><span class="skill-tag">aiohttp</span><span class="skill-tag">asyncio</span><span class="skill-tag">Celery</span><span class="skill-tag">Temporal.io</span><span class="skill-tag">Pydantic</span><span class="skill-tag">SQLAlchemy</span>
+                </div>
+            </div>
+        
+            <div class="skill-category">
+                <h4>Blockchain</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Web3.py</span><span class="skill-tag">ethers.js</span><span class="skill-tag">DeFi protocols (Uniswap, 1Inch, Stargate, LayerZero +15 others)</span>
+                </div>
+            </div>
+        
+            <div class="skill-category">
+                <h4>Infrastructure</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Kubernetes</span><span class="skill-tag">Docker</span><span class="skill-tag">FluxCD</span><span class="skill-tag">GitHub Actions</span><span class="skill-tag">CI/CD</span>
+                </div>
+            </div>
+        
+            <div class="skill-category">
+                <h4>Monitoring</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Grafana</span><span class="skill-tag">Victoria Metrics</span><span class="skill-tag">Loki</span><span class="skill-tag">Sentry</span><span class="skill-tag">Elasticsearch</span>
+                </div>
+            </div>
+        
+            <div class="skill-category">
+                <h4>Databases</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">ClickHouse</span><span class="skill-tag">Redis</span><span class="skill-tag">TimescaleDB</span>
+                </div>
+            </div>
+        
+            <div class="skill-category">
+                <h4>Trading</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Spot</span><span class="skill-tag">Futures</span><span class="skill-tag">Options basics</span><span class="skill-tag">Prop trading</span><span class="skill-tag">Backtesting</span><span class="skill-tag">Risk management</span>
+                </div>
+            </div>
+        
+            <div class="skill-category">
+                <h4>Quant</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Mathematical expectation</span><span class="skill-tag">Statistics</span><span class="skill-tag">Hedging</span><span class="skill-tag">Delta-neutral strategies</span><span class="skill-tag">ML basics</span>
+                </div>
+            </div>
+        
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="section-header">
+            <span class="section-tag">&lt;experience /&gt;</span>
+            <h2 class="section-title">Work <span class="gradient">Experience</span></h2>
+        </div>
+
+        
+            <div class="experience-item">
+                <h4>Head of IT Infrastructure</h4>
+                <p class="company">Fenixwb | Oct 2024 — Sep 2025 | Remote</p>
+                <ul><li>Migrated legacy system to modern workflow orchestration with Temporal.io</li><li>Designed ~10 microservices architecture integrated with Elasticsearch and MySQL</li><li>Engineered Rust-based POW solver achieving 0.1s vs 2s browser baseline (20x improvement)</li><li>Scaled system to 200 tasks/sec serving 10,000 users with 99% uptime</li><li>Built real-time data parser with 0.1s refresh rate for market data streams</li><li>Set up monitoring stack with Grafana + Victoria Metrics + Loki</li></ul>
+                <p class="tech"><strong>Tech:</strong> Rust, Python, Temporal.io, Elasticsearch, MySQL, Grafana, Victoria Metrics, Loki, Docker, K8s</p>
+            </div>
+        
+            <div class="experience-item">
+                <h4>CTO / Senior Python Developer</h4>
+                <p class="company">Cryptosofters | May 2023 — Nov 2024 | Remote (Dubai-based)</p>
+                <ul><li>Led team of 6 engineers (3 frontend, 2 backend, 1 Solidity)</li><li>Architected core library for DeFi integrations; delivered 20+ protocol interfaces</li><li>Built SDK generator pipeline: mitmproxy logs → OpenAPI spec → auto-generated SDK</li><li>Designed and implemented entire SDK generation workflow personally</li></ul>
+                <p class="tech"><strong>Tech:</strong> Python, Web3.py, mitmproxy, OpenAPI, DeFi, asyncio</p>
+            </div>
+        
+            <div class="experience-item">
+                <h4>Middle+ Python Developer / Tech Lead</h4>
+                <p class="company">Vitrinagram | Nov 2022 — Aug 2024 | Remote (Moscow-based)</p>
+                <ul><li>Built Telegram MiniApp backends supporting 1,000+ concurrent users per store</li><li>Designed horizontally scalable bot architecture with Celery + Kubernetes</li><li>Implemented automated subdomain provisioning: FluxCD + GitHub Actions + Cloudflare</li><li>Developed S3-compatible proxy API using MinIO</li><li>Configured full observability stack: Grafana + Victoria Metrics + Loki + Sentry</li></ul>
+                <p class="tech"><strong>Tech:</strong> FastAPI, Kubernetes, Celery, FluxCD, Grafana, Victoria Metrics, Loki, Sentry, MinIO</p>
+            </div>
+        
+            <div class="experience-item">
+                <h4>Python Backend Developer / Lead</h4>
+                <p class="company">Freelance | Jan 2018 — Present</p>
+                <ul><li>Built wallet management system handling 2,000+ EVM wallets, 5,000+ transactions/day</li><li>Developed copy-trading system with infinitely scalable architecture</li><li>Created TradingView parser extracting 260M+ candlesticks for ML training</li><li>Led team of 3 Go developers building CEX arbitrage bot</li><li>Built USDT-TON payment gateway for crypto casino</li><li>Developed trading bots using nautilus-trader framework</li></ul>
+                <p class="tech"><strong>Tech:</strong> Python, Go, JS/TS, Web3.py, ethers.js, nautilus-trader, NixOS, asyncio</p>
+            </div>
+        
+    </section>
+
+    <section id="projects">
+        <div class="section-header">
+            <span class="section-tag">&lt;projects /&gt;</span>
+            <h2 class="section-title">Featured <span class="gradient">Projects</span></h2>
+        </div>
+
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <h4>Multi-Chain Wallet Orchestrator</h4>
+                <p>Automated wallet management system handling 2,000+ EVM wallets across multiple blockchain networks with zero manual intervention.</p>
+                <div class="metrics"><div class="metric"><span class="metric-value">2,000+</span><span class="metric-label">Wallets</span></div><div class="metric"><span class="metric-value">5,000+</span><span class="metric-label">Daily TXs</span></div><div class="metric"><span class="metric-value">0%</span><span class="metric-label">Intervention</span></div></div>
+                <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Web3.py</span><span class="tech-tag">asyncio</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Redis</span></div>
+            </div>
+        
+            <div class="project-card">
+                <h4>CEX Arbitrage Trading System</h4>
+                <p>Production-grade arbitrage system detecting and executing profitable trades across centralized exchanges in real-time.</p>
+                <div class="metrics"><div class="metric"><span class="metric-value">4 devs</span><span class="metric-label">Team</span></div><div class="metric"><span class="metric-value"><100ms</span><span class="metric-label">Latency</span></div><div class="metric"><span class="metric-value">Production</span><span class="metric-label">Status</span></div></div>
+                <div class="tech-tags"><span class="tech-tag">Go</span><span class="tech-tag">Python</span><span class="tech-tag">WebSockets</span><span class="tech-tag">Redis</span><span class="tech-tag">ClickHouse</span></div>
+            </div>
+        
+            <div class="project-card">
+                <h4>ML Trading Data Pipeline</h4>
+                <p>Massive-scale data collection system gathering market data for quantitative trading model training.</p>
+                <div class="metrics"><div class="metric"><span class="metric-value">260M+</span><span class="metric-label">Data Points</span></div><div class="metric"><span class="metric-value">100+</span><span class="metric-label">Assets</span></div><div class="metric"><span class="metric-value">20 years</span><span class="metric-label">Forex History</span></div></div>
+                <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">pandas</span><span class="tech-tag">ClickHouse</span><span class="tech-tag">Airflow</span><span class="tech-tag">Kafka</span></div>
+            </div>
+        
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="section-header">
+            <span class="section-tag">&lt;education /&gt;</span>
+            <h2 class="section-title">Continuous <span class="gradient">Learning</span></h2>
+        </div>
+
+        
+            <div class="education-item">
+                <h4>Machine Learning Specialization</h4>
+                <p>Stanford / Coursera — Completed 2026</p>
+            </div>
+        
+            <div class="education-item">
+                <h4>Reinforcement Learning for Trading Strategies</h4>
+                <p>New York Institute of Finance — Completed 2026</p>
+            </div>
+        
+            <div class="education-item">
+                <h4>Using Machine Learning in Trading and Finance</h4>
+                <p>New York Institute of Finance — Completed 2026</p>
+            </div>
+        
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="section-header">
+            <span class="section-tag">&lt;contact /&gt;</span>
+            <h2 class="section-title">Let's <span class="gradient">Connect</span></h2>
+            <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto;">
+                Open to remote opportunities and interesting projects.
+                Let's discuss how I can help build your next high-performance system.
+            </p>
+        </div>
+
+        <div class="social-links">
+            <a href="https://github.com/Arkptz" class="social-link" target="_blank" rel="noopener">GitHub</a><a href="https://t.me/arkptz" class="social-link" target="_blank" rel="noopener">Telegram</a><a href="https://linkedin.com/in/arkptz" class="social-link" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:arkptz@gmail.com" class="social-link">Email</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Made with ❤️ using Python & data.json</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+            Auto-generated from <a href="https://github.com/Arkptz/Arkptz">Arkptz/Arkptz</a>
+        </p>
+    </footer>
+</body>
+</html>
