@@ -41,6 +41,13 @@ def generate(output_path: str = "README.md"):
   <img src="https://komarev.com/ghpvc/?username=arkptz&label=Profile%20views&color=0e75b6&style=flat" alt="arkptz" />
 </p>
 
+# 🌐 Portfolio
+
+[![Portfolio](https://img.shields.io/badge/🌐_Live_Portfolio-7c3aed?style=for-the-badge)](https://arkptz.github.io/Arkptz)
+[![Resume](https://img.shields.io/badge/📄_Download_Resume-06b6d4?style=for-the-badge)](https://github.com/Arkptz/Arkptz/blob/main/output/Arkadiy_Pechnikov_Resume_Backend.pdf)
+
+---
+
 # 💫 About Me
 
 **{data["titles"]["backend"]}**

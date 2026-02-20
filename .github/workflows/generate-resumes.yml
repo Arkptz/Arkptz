@@ -43,5 +43,6 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add output/*.pdf README.md
+          git add output/portfolio/
           git diff --staged --quiet || git commit -m "chore: regenerate resumes and README"
           git push

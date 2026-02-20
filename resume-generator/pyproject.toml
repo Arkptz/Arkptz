@@ -13,6 +13,7 @@ generate-resume = "src.generate_all:main"
 generate-backend = "src.generate_backend:generate"
 generate-ml = "src.generate_ml:generate"
 generate-quant = "src.generate_quant:generate"
+generate-portfolio = "src.generate_portfolio:generate"
 
 [build-system]
 requires = ["hatchling", 'editables']
