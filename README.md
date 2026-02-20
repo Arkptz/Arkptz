@@ -12,16 +12,17 @@
 
 **Senior Software Engineer | ML & Quantitative Finance**
 
-8 years of Python experience. Building high-load systems, crypto infrastructure, and ML models for trading.
+Senior Software Engineer with 8 years of Python experience, transitioning into ML and quantitative finance.
 
 - 🔭 Currently building **ML trading models** using 260M+ candlesticks dataset
 - 🌱 Learning **Rust**, **Reinforcement Learning for Trading**
-- 💼 Open to **remote opportunities** in ML/Quant/Backend
+- 💼 Open to **remote / relocation** in ML/Quant/Backend
+- 🌍 **For companies that can't work with RF directly: I have options for legal entities in Cyprus, Georgia, or Dubai. Deel also works.**
 - ⚡ Fun fact: Started coding at 12, went professional at 14
 
 ## 🚀 What I've Built
 
-- 📊 Infrastructure handling **200 tasks/sec** for 10K users (99% uptime)
+- 📊 Infrastructure handling **10,000 users users** (99% uptime)
 - ⚡ Rust-based solver with **20x performance improvement**
 - 🔗 **20+ DeFi protocol integrations** (Uniswap, 1Inch, Stargate, LayerZero...)
 - 🤖 Wallet management system: **2,000+ wallets**, **5,000+ daily transactions**
@@ -83,11 +84,11 @@
 
 ---
 
-# 📜 Certifications (In Progress)
+# 📜 Certifications
 
-- 🎓 **Machine Learning Specialization** — Stanford / Coursera
-- 📈 **Reinforcement Learning for Trading Strategies** — New York Institute of Finance
-- 💹 **Using Machine Learning in Trading and Finance** — New York Institute of Finance
+- ✅ **Machine Learning Specialization** — Stanford / Coursera (Completed 2026)
+- ✅ **Reinforcement Learning for Trading Strategies** — New York Institute of Finance (Completed 2026)
+- ✅ **Using Machine Learning in Trading and Finance** — New York Institute of Finance (Completed 2026)
 
 ---
 
