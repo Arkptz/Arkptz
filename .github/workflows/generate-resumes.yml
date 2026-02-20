@@ -1,0 +1,47 @@
+name: Generate Resumes
+
+on:
+  push:
+    paths:
+      - "data.json"
+      - "resume_generator/**"
+      - ".github/workflows/generate-resumes.yml"
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "latest"
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Install dependencies
+        run: cd ./resume-generator && uv sync
+
+      - name: Generate resumes and README
+        run: cd ./resume-generator && uv run generate-resume
+
+      - name: Copy README to repo root
+        run: cp output/README.md ./README.md
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: resumes
+          path: output/*.pdf
+
+      - name: Commit generated files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add output/*.pdf README.md
+          git diff --staged --quiet || git commit -m "chore: regenerate resumes and README"
+          git push

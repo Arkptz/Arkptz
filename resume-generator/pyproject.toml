@@ -1,0 +1,232 @@
+[project]
+name = "resume-generator"
+version = "1.0.0"
+description = "PDF resume generator for Arkady Pechnikov"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "reportlab>=4.0.0",
+]
+
+[project.scripts]
+generate-resume = "src.generate_all:main"
+generate-backend = "src.generate_backend:generate"
+generate-ml = "src.generate_ml:generate"
+generate-quant = "src.generate_quant:generate"
+
+[build-system]
+requires = ["hatchling", 'editables']
+build-backend = "hatchling.build"
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src"
+]
+
+[tool.uv]
+dev-dependencies = []
+
+
+
+[tool.ruff]
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+    "*old*",
+    "*/migrations/*",
+    "*/init_exchange.py",
+    "*/redis_utils/*",
+    "*/mongodb_utils/*",
+    "*/text_generator.py",
+    "*/push_service/service.py",
+    "*/api/v2/docs/responses.py",
+]
+
+# Same as Black.
+line-length = 120
+indent-width = 4
+
+# Assume Python 3.11
+target-version = "py311"
+
+# Performance optimizations for powerful hardware
+cache-dir = ".ruff_cache"
+# Increase memory usage for better performance
+respect-gitignore = true
+
+[tool.ruff.lint]
+# Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
+# Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
+# McCabe complexity (`C901`) by default.
+select = [ "ALL"]
+# select = ["E4", "E7", "E9", "F"]
+ignore = [
+    "A001", # Variable `filter` is shadowing a Python builtin
+    "A002", # Function argument `filter` is shadowing a Python builtin
+    "PLC0415", # import should be top level
+    "D100", # missing docstring in public module
+    "D101", # missing docstring in public class
+    "D102", # missing docstring in public module
+    "D103", # missing docstring in public function
+    "D104", # missing docstring in public package
+    "D107", # Missing docstring in `__init__`
+    "ANN201", # Missing return type annotation for public function `main`
+    'ANN003', # Missing type annotation for `**kwargs`
+    "ANN202", # Missing return type annotation for private function `_handle_filter`
+    "ANN204", # Missing return type annotation for special method `__init__`
+    "SIM117", #Use a single `with` statement with multiple contexts instead of nested `with` statements
+    "SLF001", # Private member accessed:
+    'FBT001', #Boolean-typed positional argument in function definition
+    'FBT002', #Boolean default positional argument in function definition
+    "PLR0913", #Too many arguments in function definition (6 > 5)
+    "SIM102", #Use a single `if` statement instead of nested `if` statements
+    "RET503", #Missing explicit `return` at the end of function able to return non-`None` value
+    "S101", #Use of `assert` detected
+    "PGH003", #Use specific rule codes when ignoring type issues
+    "ERA001", #Found commented-out code
+    "C901", #`run` is too complex
+    "ANN401", #Dynamically typed expressions (typing.Any) are disallowed in `sms_result`
+    "TID252", # Prefer absolute imports over relative imports from parent modules
+    "PERF401",  # Use a list comprehension to create a transformed list
+    "TRY003",  # Avoid specifying long messages outside the exception class
+    "BLE001",  # Do not catch blind exception: `Exception`
+    "SIM108", # Use ternary operator instead of `if`-`else`-block
+    "ANN002", # missing type annotation for `*args`
+    "G004", #Logging statement uses f-string
+    "PGH004", #Use specific rule codes when using `noqa`
+    "TRY301", #Abstract `raise` to an inner function
+    "ASYNC109", # Async function definition with a `timeout` parameter
+    "PLR0912", # Too many branches (19 > 12)
+    "D400", #First line should end with a period
+    "D205", #1 blank line required between summary line and description
+    "D401", #First line of docstring should be in imperative mood
+    "PLR2004", #Magic value used in comparison, consider replacing with a constant variable
+    "PLR1714", #Consider merging multiple comparisons. Use a `set` if the elements are hashable.
+    "S311", #Standard pseudo-random generators are not suitable for cryptographic purposes
+    "FIX002", #Line contains TODO, consider resolving the issue
+    "TD002", # Missing author in TODO; try: `# TODO(<author_name>): ...` or `# TODO @<author_name>: ...`
+    "TD003", #Missing issue link on the line following this TODO
+    "PLR0915", #Too many statements (59 > 50)
+    "ANN206", #Missing return type annotation for classmethod `pre_handler`
+    "RUF001", # String contains ambiguous Cyrillic characters
+    "SIM105", #Use `contextlib.suppress(Exception)` instead of `try`-`except`-`pass`
+    "RUF002",  #Docstring contains ambiguous Cyrillic characters
+    "ANN001", #Missing type annotation for function argument
+    "PLR0911", #Too many return statements (7 > 6)
+    "RUF003", #Comment contains ambiguous Cyrillic characters
+    "ARG001", #Unused function argument
+    "D415", #First line should end with a period, question mark, or exclamation point
+    "RUF006", #Store a reference to the return value of `asyncio.create_task`
+    "B008", #Do not perform function call in argument defaults
+    "ARG004",#Unused static method argument
+    "D404", # First word of the docstring should not be "This"
+    "N818", #Exception name should be named with an Error suffix
+    "RUF012", #Mutable class attributes should be annotated with `typing.ClassVar`
+    # "TC002",#Move third-party import into a type-checking block
+    # "TC001",#Move application import into a type-checking block
+    "RUF024", # Do not pass mutable objects as values to `dict.fromkeys`
+    "PLC0206", # Extracting value from dictionary without calling `.items()`
+    "N812",#Lowercase imported as non-lowercase
+    "ARG002", #Unused method argument
+    "D106", #Missing docstring in public nested class
+    "B039", #Do not use mutable data structures for `ContextVar` defaults
+    "PTH118", #`os.path.join()` should be replaced by `Path` with `/` operator
+    "PTH123", # `open()` should be replaced by `Path.open()`
+    "PTH100", #`os.path.abspath()` should be replaced by `Path.resolve()`
+    "PTH120", #`os.path.dirname()` should be replaced by `Path.parent`
+    "FAST002", #FastAPI dependency without `Annotated`
+    "FAST001", #FastAPI route with redundant `response_model` argument
+    "C408", #Unnecessary `dict()` call (rewrite as a literal)
+]
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/*" = ["INP001", "TRY300", "TRY401"]
+"test*.py" = ["INP001", "S101", "PLR2004", "ANN201", "D103"]  # Allow test files specific patterns
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+# Enable auto-formatting of code examples in docstrings. Markdown,
+# reStructuredText code/literal blocks and doctests are all supported.
+#
+# This is currently disabled by default, but it is planned for this
+# to be opt-out in the future.
+docstring-code-format = false
+
+# Set the line length limit used when formatting code snippets in
+# docstrings.
+#
+# This only has an effect when the `docstring-code-format` setting is
+# enabled.
+docstring-code-line-length = "dynamic"
+
+# [tool.pyright]
+# include = [
+#     "packages/*",
+#     "bins/*",
+#     "*.py"  # Include root level Python files
+# ]
+# extraPaths = [
+#     "packages/*",
+#     "bins/*",
+#     "."  # Add current directory to path
+# ]
+# exclude = [".venv", "__pycache__", "*.pyc"]
+# autoSearchPaths = true
+# useLibraryCodeForTypes = true
+# verboseOutput = true
+# enableExperimentalFeatures = true
+# # defineConstant = { MYPY = true }
+# venvPath = "."
+# venv = ".venv"
+# reportMissingImports = "warning"
+# reportMissingTypeStubs = false
+# reportPrivateUsage = "warning"
+# reportUnknownArgumentType = "warning"
+# reportUnsupportedDunderAll = "warning"
+# reportWildcardImportFromLibrary = "warning"
+# # Performance settings
+# executionEnvironments = [
+#     { root = ".", pythonVersion = "3.11", pythonPlatform = "Linux", extraPaths = ["packages", "bins"] }
+# ]
