@@ -1,7 +1,7 @@
 [project]
 name = "resume-generator"
 version = "1.0.0"
-description = "PDF resume generator for Arkady Pechnikov"
+description = "PDF resume generator for Arkadiy Pechnikov"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
