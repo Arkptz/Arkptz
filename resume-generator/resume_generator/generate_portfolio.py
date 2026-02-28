@@ -60,7 +60,6 @@ def generate(output_dir: str = None):
         f.write(";\n")
     print(f"✓ Generated data.js → {data_js}")
 
-
     # Verify index.html exists
     index = output_path / "index.html"
     if index.exists():

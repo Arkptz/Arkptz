@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
 """Generate backend-focused PDF resume."""
 
-from shared import (
-    load_data, build_styles, make_doc,
-    add_header, add_summary, add_skills, add_experience,
-    add_education, add_languages,
+from .shared import (
+    load_data,
+    build_styles,
+    make_doc,
+    add_header,
+    add_summary,
+    add_skills,
+    add_experience,
+    add_education,
+    add_languages,
 )
 
 SKILL_KEYS = ["languages", "backend", "databases", "infrastructure", "monitoring", "blockchain"]

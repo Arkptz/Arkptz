@@ -6,11 +6,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from generate_backend import generate as gen_backend
-from generate_ml import generate as gen_ml
-from generate_techlead import generate as gen_techlead
-from generate_readme import generate as gen_readme
-from generate_portfolio import generate as gen_portfolio
+from .generate_backend import generate as gen_backend
+from .generate_ml import generate as gen_ml
+from .generate_techlead import generate as gen_techlead
+from .generate_readme import generate as gen_readme
+from .generate_portfolio import generate as gen_portfolio
 
 
 def main():

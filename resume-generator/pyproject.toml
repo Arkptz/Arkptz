@@ -9,18 +9,18 @@ dependencies = [
 ]
 
 [project.scripts]
-generate-resume = "src.generate_all:main"
-generate-backend = "src.generate_backend:generate"
-generate-ml = "src.generate_ml:generate"
-generate-techlead = "src.generate_techlead:generate"
-generate-portfolio = "src.generate_portfolio:generate"
+generate-resume = "resume_generator.generate_all:main"
+generate-backend = "resume_generator.generate_backend:generate"
+generate-ml = "resume_generator.generate_ml:generate"
+generate-techlead = "resume_generator.generate_techlead:generate"
+generate-portfolio = "resume_generator.generate_portfolio:generate"
 
 [build-system]
 requires = ["hatchling", 'editables']
 build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = [
-    "src"
+    "resume_generator"
 ]
 
 [tool.uv]
