@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - "data.json"
-      - "resume_generator/**"
+      - "resume-generator/**"
       - ".github/workflows/generate-resumes.yml"
   workflow_dispatch:
 
@@ -28,16 +28,6 @@ jobs:
 
       - name: Generate resumes and README
         run: cd ./resume-generator && uv run generate-resume
-
-      - name: Copy README to repo root
-        run: cp output/README.md ./README.md
-
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: resumes
-          path: output/*.pdf
-
       - name: Commit generated files
         run: |
           git config --local user.email "action@github.com"

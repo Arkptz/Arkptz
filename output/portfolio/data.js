@@ -7,40 +7,49 @@ window.PORTFOLIO_DATA = {
     "telegram": "arkptz",
     "github": "Arkptz",
     "linkedin": "arkptz",
-    "location": "Russia",
-    "open_to": "Remote / Relocation",
-    "hiring_notice": "For companies that can't work with RF directly: I have options for legal entities in Cyprus, Georgia, or Dubai. Deel also works.",
+    "location": "Remote / Open to Relocation",
+    "open_to": "Remote / Relocation (Cyprus, Georgia, Dubai, Deel)",
+    "hiring_notice": "For international companies: available via legal entities in Cyprus, Georgia, or Dubai. Deel also works.",
     "avatar": "https://avatars.githubusercontent.com/u/58850875",
-    "tagline": "Building high-performance systems that scale"
+    "tagline": "Senior Python Backend Engineer building high-load fintech infrastructure"
   },
   "meta": {
-    "title": "Arkadiy Pechnikov | Senior Software Engineer",
-    "description": "Senior Software Engineer with 8 years of Python experience. High-load systems, crypto infrastructure, ML trading. 99% uptime, 10K+ users, 260M+ data points.",
-    "keywords": "Python, Rust, Go, Backend, ML, Quant, Trading, DeFi, Kubernetes, High-load",
-    "theme_color": "#7c3aed"
+    "title": "Arkadiy Pechnikov | Senior Python Backend Engineer",
+    "description": "Senior Python Backend Engineer with 8+ years building high-load distributed systems, crypto infrastructure, and microservices.",
+    "keywords": "Python, Senior Backend Engineer, Distributed Systems, Kubernetes, Microservices, FinTech, Crypto, ML, FastAPI, Temporal.io, Docker"
   },
   "titles": {
-    "backend": "Senior Software Engineer | ML & Quantitative Finance",
-    "ml": "Python Developer | ML Infrastructure & Data Engineering",
-    "quant": "Quantitative Developer / Trader",
-    "portfolio": "Senior Software Engineer"
+    "backend": "Senior Python Backend Engineer | Distributed Systems & FinTech Infrastructure",
+    "ml": "Python Engineer | ML Infrastructure & Data Pipelines",
+    "techlead": "Tech Lead / Engineering Manager | Python, Distributed Systems",
+    "portfolio": "Senior Python Backend Engineer"
   },
   "summaries": {
-    "backend": "Senior Software Engineer with 8 years of Python experience, transitioning into ML and quantitative finance. Background in high-load distributed systems, crypto infrastructure, and DeFi automation. Currently building ML models for trading using self-collected datasets (260M+ candlesticks). Proven track record of leading small teams, architecting microservices handling 200+ tasks/sec, and building production systems managing 2,000+ wallets generating 5,000+ daily transactions.",
-    "ml": "Python Developer with 8 years of experience, transitioning into ML infrastructure and data engineering. Strong background in building high-load distributed systems, data pipelines, and observability stacks. Currently completing Stanford ML Specialization and building trading models on self-collected datasets (260M+ data points). Experienced with production monitoring (Grafana, Victoria Metrics, Loki, Sentry), workflow orchestration (Temporal.io), and Kubernetes deployments.",
-    "quant": "8 years Python, 5 years in crypto trading, self-taught since age 12. Hands-on experience in algorithmic trading, data collection, and high-load systems. Currently researching delta-neutral strategies and ML-based trading models. Funded prop trader (FundingPips, Upscale).",
-    "portfolio": "Senior Software Engineer with 8 years of Python in production. Built systems processing 5,000+ daily transactions, serving 10,000 users at 99% uptime. Led infrastructure migrations, designed microservices architectures, and delivered 20+ DeFi protocol integrations. Now applying ML to quantitative trading with a self-collected 260M+ datapoint dataset."
+    "backend": "Senior Python Backend Engineer with 8+ years of production experience building high-load distributed systems for fintech and crypto infrastructure. Architected microservices ecosystem processing 200 background jobs/sec serving 10,000 users at 99% uptime. Built SDK generation pipeline automating integration with 20+ DeFi protocols. Experienced in workflow orchestration (Temporal.io), container orchestration (Kubernetes, Docker), and full observability stacks (Grafana, Victoria Metrics, Loki). Engineered Rust-based POW solver achieving 20x performance improvement over browser baseline.",
+    "ml": "Python Engineer with 8+ years of backend and data infrastructure experience, specializing in ML pipelines and large-scale data processing. Built data collection system aggregating 260M+ candlesticks across crypto and forex markets for ML model training. Hands-on with PyTorch and TensorFlow for LSTM/CNN models applied to quantitative trading. Strong production engineering foundation: Kubernetes deployments, CI/CD pipelines, monitoring stacks, and workflow orchestration. Completing Stanford ML Specialization and NYIF ML in Trading courses.",
+    "techlead": "Engineering leader with 8+ years of hands-on Python development and 3+ years leading engineering teams. As CTO, built and led a 6-engineer team delivering crypto trading infrastructure on a $100K budget. Architected SDK generation pipeline (mitmproxy to OpenAPI to auto-generated SDK) enabling integration with 20+ undocumented exchange APIs. Established code review processes, CI/CD workflows, and incident response protocols. Experienced in hiring, budget management, and cross-functional coordination.",
+    "portfolio": "Senior Python Backend Engineer with 8+ years of production experience. Built systems processing 5,000+ daily transactions, serving 10,000 users at 99% uptime. Led engineering teams, architected microservices, and delivered 20+ DeFi protocol integrations."
   },
   "stats": [
     {
       "value": 8,
       "suffix": "+",
-      "label": "Years Experience"
+      "label": "Years Python"
     },
     {
-      "value": 260,
-      "suffix": "M+",
-      "label": "Data Points"
+      "value": 200,
+      "suffix": " rps",
+      "label": "Background Jobs"
+    },
+    {
+      "value": 10,
+      "suffix": "K+",
+      "label": "Users Served"
+    },
+    {
+      "value": 6,
+      "suffix": "",
+      "label": "Engineers Led"
     },
     {
       "value": 20,
@@ -48,19 +57,9 @@ window.PORTFOLIO_DATA = {
       "label": "DeFi Protocols"
     },
     {
-      "value": 99,
-      "suffix": "%",
-      "label": "Uptime"
-    },
-    {
-      "value": 5000,
-      "suffix": "+",
-      "label": "Daily TXs"
-    },
-    {
-      "value": 10000,
-      "suffix": "+",
-      "label": "Users Served"
+      "value": 260,
+      "suffix": "M+",
+      "label": "Data Points"
     }
   ],
   "skills": {
@@ -74,55 +73,17 @@ window.PORTFOLIO_DATA = {
         "SQL"
       ]
     },
-    "ml_data": {
-      "label": "ML/Data",
-      "items": [
-        "TensorFlow",
-        "scikit-learn",
-        "pandas",
-        "numpy",
-        "data pipelines",
-        "feature engineering"
-      ]
-    },
     "backend": {
-      "label": "Backend",
+      "label": "Backend & Frameworks",
       "items": [
         "FastAPI",
+        "Django",
         "aiohttp",
         "asyncio",
         "Celery",
         "Temporal.io",
         "Pydantic",
         "SQLAlchemy"
-      ]
-    },
-    "blockchain": {
-      "label": "Blockchain",
-      "items": [
-        "Web3.py",
-        "ethers.js",
-        "DeFi protocols (Uniswap, 1Inch, Stargate, LayerZero +15 others)"
-      ]
-    },
-    "infrastructure": {
-      "label": "Infrastructure",
-      "items": [
-        "Kubernetes",
-        "Docker",
-        "FluxCD",
-        "GitHub Actions",
-        "CI/CD"
-      ]
-    },
-    "monitoring": {
-      "label": "Monitoring",
-      "items": [
-        "Grafana",
-        "Victoria Metrics",
-        "Loki",
-        "Sentry",
-        "Elasticsearch"
       ]
     },
     "databases": {
@@ -133,28 +94,63 @@ window.PORTFOLIO_DATA = {
         "MongoDB",
         "ClickHouse",
         "Redis",
-        "TimescaleDB"
+        "TimescaleDB",
+        "Elasticsearch"
       ]
     },
-    "trading": {
-      "label": "Trading",
+    "infrastructure": {
+      "label": "Cloud & DevOps",
       "items": [
-        "Spot",
-        "Futures",
-        "Options basics",
-        "Prop trading",
-        "Backtesting",
-        "Risk management"
+        "Kubernetes",
+        "Docker",
+        "FluxCD",
+        "GitHub Actions",
+        "CI/CD",
+        "Helm",
+        "Cloudflare",
+        "MinIO"
       ]
     },
-    "quant": {
-      "label": "Quant",
+    "monitoring": {
+      "label": "Observability",
       "items": [
-        "Mathematical expectation",
-        "Statistics",
-        "Hedging",
-        "Delta-neutral strategies",
-        "ML basics"
+        "Grafana",
+        "Victoria Metrics",
+        "Loki",
+        "Sentry",
+        "Prometheus"
+      ]
+    },
+    "ml_data": {
+      "label": "ML & Data",
+      "items": [
+        "PyTorch",
+        "TensorFlow",
+        "scikit-learn",
+        "pandas",
+        "numpy",
+        "Feature Engineering",
+        "LSTM/CNN"
+      ]
+    },
+    "blockchain": {
+      "label": "Blockchain & DeFi",
+      "items": [
+        "Web3.py",
+        "ethers.js",
+        "20+ DeFi protocols (Uniswap, 1Inch, Stargate, LayerZero)",
+        "TON SDK"
+      ]
+    },
+    "leadership": {
+      "label": "Leadership & Process",
+      "items": [
+        "Team Building (up to 6)",
+        "Code Review",
+        "Architecture Decisions",
+        "Hiring",
+        "Budget Management",
+        "Agile"
       ]
     }
   },
@@ -162,15 +158,28 @@ window.PORTFOLIO_DATA = {
     {
       "title": "Head of IT Infrastructure",
       "company": "Fenixwb",
+      "product": "Wildberries slot booking service",
       "period": "Oct 2024 — Sep 2025",
       "location": "Remote",
-      "bullets": [
-        "Migrated legacy system to modern workflow orchestration with Temporal.io",
-        "Designed ~10 microservices architecture integrated with Elasticsearch and MySQL",
-        "Engineered Rust-based POW solver achieving 0.1s vs 2s browser baseline (20x improvement)",
-        "Scaled system to 200 tasks/sec serving 10,000 users with 99% uptime",
-        "Built real-time data parser with 0.1s refresh rate for market data streams",
-        "Set up monitoring stack with Grafana + Victoria Metrics + Loki"
+      "bullets_backend": [
+        "Migrated legacy monolith to Temporal.io workflow orchestration, designing ~10 microservices integrated with Elasticsearch and MySQL",
+        "Scaled system to 200 background jobs/sec serving 10,000 users with 99% uptime",
+        "Engineered Rust-based POW solver achieving 0.1s execution vs 2s browser baseline (20x improvement)",
+        "Recruited and managed 2 engineers (backend + DevOps), owned architecture decisions and task allocation",
+        "Diagnosed critical throughput bottleneck — proved hypothesis through systematic load testing and resolved the issue",
+        "Deployed full observability stack: Grafana + Victoria Metrics + Loki with custom dashboards and alerting"
+      ],
+      "bullets_ml": [
+        "Designed ~10 microservices processing 200 tasks/sec with real-time data pipeline for market data streams",
+        "Built real-time data parser with 0.1s refresh rate aggregating market data for 10,000 concurrent users",
+        "Deployed Grafana + Victoria Metrics + Loki monitoring stack with custom metrics and alerting",
+        "Engineered Rust-based computation module achieving 20x performance improvement over browser baseline"
+      ],
+      "bullets_techlead": [
+        "Recruited and managed 2 engineers (backend + DevOps), establishing task allocation and code review processes",
+        "Made key architecture decision to migrate from legacy monolith to Temporal.io microservices (~10 services)",
+        "Scaled platform to 200 background jobs/sec serving 10,000 users at 99% uptime",
+        "Diagnosed critical throughput bottleneck at 200 rps through systematic load testing and hypothesis-driven debugging"
       ],
       "tech": [
         "Rust",
@@ -189,13 +198,27 @@ window.PORTFOLIO_DATA = {
     {
       "title": "CTO / Senior Python Developer",
       "company": "Cryptosofters",
+      "product": "Crypto trading infrastructure platform",
       "period": "May 2023 — Nov 2024",
       "location": "Remote (Dubai-based)",
-      "bullets": [
-        "Led team of 6 engineers (3 frontend, 2 backend, 1 Solidity)",
-        "Architected core library for DeFi integrations; delivered 20+ protocol interfaces",
-        "Built SDK generator pipeline: mitmproxy logs → OpenAPI spec → auto-generated SDK",
-        "Designed and implemented entire SDK generation workflow personally"
+      "bullets_backend": [
+        "Architected SDK generation pipeline: mitmproxy traffic capture → OpenAPI spec → auto-generated Python SDK for undocumented exchange APIs",
+        "Delivered 20+ DeFi protocol integrations (Uniswap, 1Inch, Stargate, LayerZero) as reusable library",
+        "Built core async Python library for DeFi interactions handling concurrent operations across multiple chains",
+        "Implemented code review process, CI/CD pipelines, and structured task management for team of 6"
+      ],
+      "bullets_ml": [
+        "Architected SDK generation pipeline automating API discovery and client generation from network traffic",
+        "Built data ingestion layer processing real-time data from 20+ DeFi protocols across multiple blockchains",
+        "Designed async Python library for concurrent multi-chain operations with retry logic and error handling"
+      ],
+      "bullets_techlead": [
+        "Built and led 6-engineer team (3 frontend, 2 backend, 1 Solidity) delivering crypto trading platform on $100K budget",
+        "Owned full hiring pipeline: wrote job descriptions, conducted technical interviews, onboarded engineers",
+        "Architected SDK generation pipeline — key technical decision enabling integration with 20+ undocumented APIs",
+        "Established engineering processes: code review, CI/CD, sprint planning, knowledge sharing sessions",
+        "Navigated budget crisis: prepared investor pitch deck and led fundraising efforts to secure continued development",
+        "Delegated tech lead responsibilities to senior engineer, focusing on strategic and business-level decisions"
       ],
       "tech": [
         "Python",
@@ -203,21 +226,34 @@ window.PORTFOLIO_DATA = {
         "mitmproxy",
         "OpenAPI",
         "DeFi",
-        "asyncio"
+        "asyncio",
+        "Docker"
       ],
       "color": "secondary"
     },
     {
       "title": "Middle+ Python Developer / Tech Lead",
       "company": "Vitrinagram",
+      "product": "Telegram MiniApp e-commerce platform",
       "period": "Nov 2022 — Aug 2024",
       "location": "Remote (Moscow-based)",
-      "bullets": [
-        "Built Telegram MiniApp backends supporting 1,000+ concurrent users per store",
-        "Designed horizontally scalable bot architecture with Celery + Kubernetes",
-        "Implemented automated subdomain provisioning: FluxCD + GitHub Actions + Cloudflare",
-        "Developed S3-compatible proxy API using MinIO",
-        "Configured full observability stack: Grafana + Victoria Metrics + Loki + Sentry"
+      "bullets_backend": [
+        "Built Telegram MiniApp backends benchmarked for 1,000+ concurrent users per store with horizontal scaling",
+        "Designed scalable bot architecture with Celery task queue + Kubernetes orchestration",
+        "Implemented automated subdomain provisioning pipeline: FluxCD + GitHub Actions + Cloudflare API",
+        "Developed S3-compatible proxy API using MinIO for tenant-isolated file storage",
+        "Configured full observability: Grafana + Victoria Metrics + Loki + Sentry with per-tenant dashboards"
+      ],
+      "bullets_ml": [
+        "Built backend infrastructure benchmarked for 1,000+ concurrent users with Celery + Kubernetes",
+        "Configured observability stack (Grafana + Victoria Metrics + Loki + Sentry) with custom metrics",
+        "Implemented GitOps deployment pipeline: FluxCD + GitHub Actions + Cloudflare"
+      ],
+      "bullets_techlead": [
+        "Led backend development for Telegram MiniApp platform, making architecture decisions for multi-tenant scalability",
+        "Designed horizontally scalable architecture with Celery + Kubernetes supporting 1,000+ concurrent users per store",
+        "Implemented GitOps deployment pipeline: FluxCD + GitHub Actions + Cloudflare for automated provisioning",
+        "Identified technical leadership gap — escalated concerns to CEO, resulting in team restructuring"
       ],
       "tech": [
         "FastAPI",
@@ -228,22 +264,34 @@ window.PORTFOLIO_DATA = {
         "Victoria Metrics",
         "Loki",
         "Sentry",
-        "MinIO"
+        "MinIO",
+        "Cloudflare"
       ],
       "color": "primary"
     },
     {
       "title": "Python Backend Developer / Lead",
       "company": "Freelance",
+      "product": "Crypto infrastructure projects",
       "period": "Jan 2018 — Present",
       "location": "",
-      "bullets": [
-        "Built wallet management system handling 2,000+ EVM wallets, 5,000+ transactions/day",
-        "Developed copy-trading system with infinitely scalable architecture",
-        "Created TradingView parser extracting 260M+ candlesticks for ML training",
-        "Led team of 3 Go developers building CEX arbitrage bot",
-        "Built USDT-TON payment gateway for crypto casino",
-        "Developed trading bots using nautilus-trader framework"
+      "bullets_backend": [
+        "Built wallet management system handling 2,000+ EVM wallets with 5,000+ daily transactions, zero manual intervention",
+        "Created TradingView parser extracting 260M+ candlesticks (crypto + 20 years forex) for ML datasets",
+        "Led team of 3 Go developers building CEX arbitrage bot with sub-100ms execution latency",
+        "Developed copy-trading system with horizontally scalable architecture supporting unlimited subscriber wallets",
+        "Built USDT-TON payment gateway with instant confirmation for crypto gaming platform"
+      ],
+      "bullets_ml": [
+        "Built data pipeline collecting 260M+ candlesticks (crypto + 20 years forex) with automated quality checks",
+        "Developed feature engineering pipeline: raw OHLCV → technical indicators → normalized ML training datasets",
+        "Created backtesting infrastructure using nautilus-trader framework for strategy validation",
+        "Engineered wallet system processing 5,000+ daily transactions with real-time monitoring and alerting"
+      ],
+      "bullets_techlead": [
+        "Led team of 3 Go developers on CEX arbitrage project — owned architecture, task allocation, API integrations",
+        "Built and maintained multiple production systems: wallet orchestrator (2,000+ wallets), payment gateway, data pipelines",
+        "Managed client relationships and project scoping across 8+ freelance engagements over 6 years"
       ],
       "tech": [
         "Python",
@@ -252,7 +300,8 @@ window.PORTFOLIO_DATA = {
         "Web3.py",
         "ethers.js",
         "nautilus-trader",
-        "NixOS",
+        "PostgreSQL",
+        "Redis",
         "asyncio"
       ],
       "color": "secondary"
@@ -260,9 +309,36 @@ window.PORTFOLIO_DATA = {
   ],
   "projects": [
     {
+      "icon": "code",
+      "title": "SDK Generation Pipeline",
+      "description": "Automated pipeline: mitmproxy traffic capture → OpenAPI spec → auto-generated Python SDK for undocumented exchange APIs.",
+      "metrics": [
+        {
+          "label": "APIs",
+          "value": "20+"
+        },
+        {
+          "label": "Process",
+          "value": "Automated"
+        },
+        {
+          "label": "Impact",
+          "value": "Core Product"
+        }
+      ],
+      "tech": [
+        "Python",
+        "mitmproxy",
+        "OpenAPI",
+        "asyncio"
+      ],
+      "featured": true,
+      "color": "primary"
+    },
+    {
       "icon": "wallet",
       "title": "Multi-Chain Wallet Orchestrator",
-      "description": "Automated wallet management system handling 2,000+ EVM wallets across multiple blockchain networks with zero manual intervention.",
+      "description": "Production wallet management: 2,000+ EVM wallets, zero manual intervention.",
       "metrics": [
         {
           "label": "Wallets",
@@ -285,12 +361,39 @@ window.PORTFOLIO_DATA = {
         "Redis"
       ],
       "featured": true,
+      "color": "secondary"
+    },
+    {
+      "icon": "database",
+      "title": "Market Data Pipeline",
+      "description": "Large-scale data collection for ML model training.",
+      "metrics": [
+        {
+          "label": "Data Points",
+          "value": "260M+"
+        },
+        {
+          "label": "Assets",
+          "value": "100+"
+        },
+        {
+          "label": "History",
+          "value": "20 years"
+        }
+      ],
+      "tech": [
+        "Python",
+        "pandas",
+        "ClickHouse",
+        "TradingView API"
+      ],
+      "featured": true,
       "color": "primary"
     },
     {
       "icon": "trending",
-      "title": "CEX Arbitrage Trading System",
-      "description": "Production-grade arbitrage system detecting and executing profitable trades across centralized exchanges in real-time.",
+      "title": "CEX Arbitrage System",
+      "description": "Real-time arbitrage detection and execution across exchanges.",
       "metrics": [
         {
           "label": "Team",
@@ -314,182 +417,28 @@ window.PORTFOLIO_DATA = {
       ],
       "featured": true,
       "color": "secondary"
-    },
-    {
-      "icon": "database",
-      "title": "ML Trading Data Pipeline",
-      "description": "Massive-scale data collection system gathering market data for quantitative trading model training.",
-      "metrics": [
-        {
-          "label": "Data Points",
-          "value": "260M+"
-        },
-        {
-          "label": "Assets",
-          "value": "100+"
-        },
-        {
-          "label": "Forex History",
-          "value": "20 years"
-        }
-      ],
-      "tech": [
-        "Python",
-        "pandas",
-        "ClickHouse",
-        "Airflow",
-        "Kafka"
-      ],
-      "featured": true,
-      "color": "primary"
-    },
-    {
-      "icon": "credit",
-      "title": "USDT-TON Payment Gateway",
-      "description": "Cryptocurrency payment processing system for online gaming platform with instant confirmation and low fees.",
-      "metrics": [
-        {
-          "label": "Currency",
-          "value": "USDT-TON"
-        },
-        {
-          "label": "Confirmation",
-          "value": "Instant"
-        },
-        {
-          "label": "Platform",
-          "value": "Gaming"
-        }
-      ],
-      "tech": [
-        "Python",
-        "TON SDK",
-        "FastAPI",
-        "PostgreSQL"
-      ],
-      "featured": false,
-      "color": "secondary"
-    },
-    {
-      "icon": "bot",
-      "title": "Algorithmic Trading Bots",
-      "description": "Automated trading strategies using nautilus-trader framework with backtesting and live execution capabilities.",
-      "metrics": [
-        {
-          "label": "Framework",
-          "value": "nautilus"
-        },
-        {
-          "label": "Strategies",
-          "value": "Multiple"
-        },
-        {
-          "label": "Markets",
-          "value": "Crypto/FX"
-        }
-      ],
-      "tech": [
-        "Python",
-        "nautilus-trader",
-        "TensorFlow",
-        "pandas"
-      ],
-      "featured": false,
-      "color": "primary"
-    }
-  ],
-  "trading_experience": [
-    {
-      "title": "Prop Trading (Forex)",
-      "company": "FundingPips, Upscale",
-      "period": "2025 - Present",
-      "bullets": [
-        "Passed funded challenges trading forex manually",
-        "Researching Smart Money / ICT concepts with various hyperparameters",
-        "Backtesting strategies on 20 years of minute-level forex data"
-      ]
-    },
-    {
-      "title": "Crypto Trading",
-      "company": "",
-      "period": "2021 - Present",
-      "bullets": [
-        "Active spot and futures trading (manual and via API)",
-        "Copy-trading systems usage and development",
-        "Currently trading Polymarket prediction markets"
-      ]
-    },
-    {
-      "title": "CEX Arbitrage Project",
-      "company": "",
-      "period": "2024",
-      "bullets": [
-        "Led team of 3 Go developers building arbitrage bot",
-        "Architecture design, API integrations, execution optimization"
-      ]
-    }
-  ],
-  "quant_projects": [
-    {
-      "title": "Polymarket Analytics",
-      "bullets": [
-        "Built parser for complete transaction history from blockchain",
-        "Developing delta-neutral strategies with crypto/forex futures hedge",
-        "Backtesting infrastructure using nautilus-trader"
-      ]
-    },
-    {
-      "title": "Market Data Collection",
-      "bullets": [
-        "Collected 260M+ candlesticks dataset (crypto + 20 years forex minute data)",
-        "Built TradingView data parser for historical data with indicators",
-        "Data pipeline for ML model training"
-      ]
-    },
-    {
-      "title": "Trading Bots",
-      "bullets": [
-        "Copy-trading system for Bitget (freelance project)",
-        "Trading bots on nautilus-trader framework",
-        "Real-time data processing: 2000+ connections, 5000+ daily operations"
-      ]
     }
   ],
   "education": [
     {
       "title": "Machine Learning Specialization",
-      "institution": "Stanford / Coursera",
-      "status": "Completed 2026",
-      "completed": [
-        "Supervised Learning (Regression & Classification)"
-      ],
-      "inProgress": [
-        "Advanced Learning Algorithms",
-        "Unsupervised Learning & RL"
-      ]
+      "institution": "Stanford University (via Coursera)",
+      "status": "2026"
     },
     {
       "title": "Reinforcement Learning for Trading Strategies",
       "institution": "New York Institute of Finance",
-      "status": "Completed 2026",
-      "completed": [],
-      "inProgress": [
-        "Full Course"
-      ]
+      "status": "2026"
     },
     {
       "title": "Using Machine Learning in Trading and Finance",
       "institution": "New York Institute of Finance",
-      "status": "Completed 2026",
-      "completed": [],
-      "inProgress": [
-        "Full Course"
-      ]
+      "status": "2026"
     }
   ],
   "languages": {
     "russian": "Native",
-    "english": "B1+ (reading/writing fluent, spoken improving with practice)"
+    "english": "B1+ (strong reading/writing, conversational spoken)"
   },
   "social": {
     "github": "https://github.com/Arkptz",
