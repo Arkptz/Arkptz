@@ -58,9 +58,9 @@ def generate(output_path: str = "README.md"):
 ---
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-7c3aed?style=for-the-badge)](https://arkptz.github.io/{gh})
-[![Resume: Backend](https://img.shields.io/badge/Resume_Backend-06b6d4?style=for-the-badge)](https://github.com/{gh}/{gh}/blob/main/output/Arkadiy_Pechnikov_Resume_Backend.pdf)
-[![Resume: ML](https://img.shields.io/badge/Resume_ML-10b981?style=for-the-badge)](https://github.com/{gh}/{gh}/blob/main/output/Arkadiy_Pechnikov_Resume_ML.pdf)
-[![Resume: Tech Lead](https://img.shields.io/badge/Resume_TechLead-f59e0b?style=for-the-badge)](https://github.com/{gh}/{gh}/blob/main/output/Arkadiy_Pechnikov_Resume_TechLead.pdf)
+[![Resume: Backend](https://img.shields.io/badge/Resume_Backend-06b6d4?style=for-the-badge)](https://github.com/{gh}/{gh}/raw/main/output/Arkadiy_Pechnikov_Resume_Backend.pdf)
+[![Resume: ML](https://img.shields.io/badge/Resume_ML-10b981?style=for-the-badge)](https://github.com/{gh}/{gh}/raw/main/output/Arkadiy_Pechnikov_Resume_ML.pdf)
+[![Resume: Tech Lead](https://img.shields.io/badge/Resume_TechLead-f59e0b?style=for-the-badge)](https://github.com/{gh}/{gh}/raw/main/output/Arkadiy_Pechnikov_Resume_TechLead.pdf)
 
 <a href="https://t.me/{p["telegram"]}"><img src="https://img.shields.io/badge/Telegram-2CA5E0?style=flat-square&logo=telegram&logoColor=white" /></a>
 <a href="https://linkedin.com/in/{p["linkedin"]}"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white" /></a>

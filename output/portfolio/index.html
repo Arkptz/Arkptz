@@ -129,9 +129,9 @@ footer{padding:40px 0 60px;border-top:1px solid var(--border);text-align:center}
   var ctsH=cts.join('');
 
   // Resume buttons
-  var resH='<a class="resume-btn" href="https://github.com/'+gh+'/'+gh+'/blob/main/output/Arkadiy_Pechnikov_Resume_Backend.pdf">⬇ Backend</a>';
-  resH+='<a class="resume-btn" href="https://github.com/'+gh+'/'+gh+'/blob/main/output/Arkadiy_Pechnikov_Resume_ML.pdf">⬇ ML</a>';
-  resH+='<a class="resume-btn" href="https://github.com/'+gh+'/'+gh+'/blob/main/output/Arkadiy_Pechnikov_Resume_TechLead.pdf">⬇ Tech Lead</a>';
+  var resH='<a class="resume-btn" href="https://github.com/'+gh+'/'+gh+'/raw/main/output/Arkadiy_Pechnikov_Resume_Backend.pdf" download>⬇ Backend</a>';
+  resH+='<a class="resume-btn" href="https://github.com/'+gh+'/'+gh+'/raw/main/output/Arkadiy_Pechnikov_Resume_ML.pdf" download>⬇ ML</a>';
+  resH+='<a class="resume-btn" href="https://github.com/'+gh+'/'+gh+'/raw/main/output/Arkadiy_Pechnikov_Resume_TechLead.pdf" download>⬇ Tech Lead</a>';
 
   // Stats
   var statsH=(D.stats||[]).map(function(s){return'<div class="metric-item"><div class="metric-val">'+s.value+(s.suffix||'')+'</div><div class="metric-label">'+s.label+'</div></div>'}).join('');
