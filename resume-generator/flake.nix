@@ -67,49 +67,7 @@
               };
               python = pkgs.python311;
               pythonPackages = python.pkgs;
-              pyprojectOverrides = pkgs.lib.composeExtensions (uv2nix-hammer-overrides.overrides_strict pkgs) (
-                _final: prev: {
-                  asynclog = prev.asynclog.overrideAttrs (old: {
-                    buildInputs = (old.buildInputs or [ ]) ++ [
-                      _final.setuptools
-                      _final.wheel
-                    ];
-                  });
-                  proxy-utils = prev.proxy-utils.overrideAttrs (old: {
-                    buildInputs = (old.buildInputs or [ ]) ++ [ _final.poetry-core ];
-                  });
-                  asyncpg = pythonPackages.asyncpg;
-                  dulwich = prev.dulwich.overrideAttrs (old: {
-                    buildInputs = (old.buildInputs or [ ]) ++ [
-                      _final.setuptools
-                      _final.wheel
-                    ];
-                  });
-                  opentele = prev.opentele.overrideAttrs (old: {
-                    buildInputs = (old.buildInputs or [ ]) ++ [ _final.poetry-core ];
-                  });
-                  tgconvertor = prev.tgconvertor.overrideAttrs (old: {
-                    buildInputs = (old.buildInputs or [ ]) ++ [ _final.poetry-core ];
-                  });
-                  autoflake = prev.autoflake.overrideAttrs (old: {
-                    postInstall = ''
-                      rm $out/lib/python3.11/site-packages/README.md
-                      rm $out/lib/python3.11/site-packages/LICENSE
-                    '';
-                  });
-                  # Use nixpkgs PyQt5 with proper sip support
-                  pyqt5 = pythonPackages.pyqt5.overridePythonAttrs (old: {
-                    propagatedBuildInputs = (old.propagatedBuildInputs or [ ]) ++ [
-                      pythonPackages.sip
-                      pythonPackages.pyqt5-sip
-                    ];
-                    pythonImportsCheck = [
-                      "PyQt5"
-                      "PyQt5.sip"
-                    ];
-                  });
-                }
-              );
+              pyprojectOverrides = uv2nix-hammer-overrides.overrides_strict pkgs;
               editableOverlay = workspace.mkEditablePyprojectOverlay {
                 # Use environment variable
                 root = "$REPO_ROOT/resume-generator";
