@@ -450,6 +450,17 @@
       "color": "primary"
     },
     {
+      "icon": "code",
+      "title": "mitm2openapi",
+      "description": "Rust rewrite of mitmproxy2swagger — single ~5 MB static binary that converts mitmproxy flow dumps and HAR files to OpenAPI 3.0. No Python, no venv, no pip. Two-step discover → generate workflow with glob filters for fully unattended CI pipelines.",
+      "metrics": [{ "label": "Language", "value": "Rust" }, { "label": "Formats", "value": "HAR + Flow" }, { "label": "Binary", "value": "~5 MB" }],
+      "tech": ["Rust", "OpenAPI", "mitmproxy", "HAR"],
+      "featured": true,
+      "color": "secondary",
+      "github_url": "https://github.com/Arkptz/mitm2openapi",
+      "docs_url": "https://arkptz.github.io/mitm2openapi/"
+    },
+    {
       "icon": "bolt",
       "title": "High-throughput Data Ingestion (Rust)",
       "description": "Chose Rust because Python couldn't keep up. Ingests and parses 300 blk/s from distributed event sources in production - hot-path performance where throughput is the only constraint that matters.",
