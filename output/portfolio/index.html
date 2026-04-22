@@ -122,6 +122,9 @@ header.hero{padding:100px 0 48px}
 .pm{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
 .pmv{font-size:16px;font-weight:700;color:var(--amber);font-family:var(--sans)}
 .pml{font-size:9px;color:var(--text-muted);letter-spacing:.5px}
+.pl{display:flex;gap:8px;margin-top:10px}
+.pl a{font-size:11px;padding:4px 10px;border-radius:4px;text-decoration:none;border:1px solid var(--border);color:var(--text-dim);transition:all .2s;font-family:var(--mono);letter-spacing:.3px}
+.pl a:hover{border-color:var(--amber);color:var(--amber)}
 
 /* Education */
 .edu{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:12px}
@@ -649,6 +652,40 @@ footer{padding:40px 0 60px;border-top:1px solid var(--border);text-align:center}
         <span class="tag">asyncio</span>
         
       </div>
+      
+    </div>
+    
+    
+    
+    <div class="pc rv">
+      <div class="pt">mitm2openapi</div>
+      <div class="pd">Rust rewrite of mitmproxy2swagger — single ~5 MB static binary that converts mitmproxy flow dumps and HAR files to OpenAPI 3.0. No Python, no venv, no pip. Two-step discover → generate workflow with glob filters for fully unattended CI pipelines.</div>
+      
+      <div class="pm">
+        
+        <div><div class="pmv">Rust</div><div class="pml">Language</div></div>
+        
+        <div><div class="pmv">HAR + Flow</div><div class="pml">Formats</div></div>
+        
+        <div><div class="pmv">~5 MB</div><div class="pml">Binary</div></div>
+        
+      </div>
+      
+      <div class="tag-row">
+        
+          
+        <span class="tag">Rust</span>
+        <span class="tag">OpenAPI</span>
+        <span class="tag">mitmproxy</span>
+        <span class="tag">HAR</span>
+        
+      </div>
+      
+      <div class="pl">
+        <a href="https://github.com/Arkptz/mitm2openapi" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://arkptz.github.io/mitm2openapi/" target="_blank" rel="noopener">Docs</a>
+      </div>
+      
     </div>
     
     
@@ -675,6 +712,7 @@ footer{padding:40px 0 60px;border-top:1px solid var(--border);text-align:center}
         <span class="tag">asyncio</span>
         
       </div>
+      
     </div>
     
     
@@ -703,6 +741,7 @@ footer{padding:40px 0 60px;border-top:1px solid var(--border);text-align:center}
         <span class="tag">Redis</span>
         
       </div>
+      
     </div>
     
     
@@ -731,6 +770,7 @@ footer{padding:40px 0 60px;border-top:1px solid var(--border);text-align:center}
         <span class="tag">Kubernetes</span>
         
       </div>
+      
     </div>
     
     
@@ -888,17 +928,22 @@ Type "help" for available commands.
 
 
 
-        '\n2. High-throughput Data Ingestion (Rust)\n   Chose Rust because Python couldn\'t keep up. Ingests and parses 300 blk/s from distributed event sources in production - hot-path performance where throughput is the only constraint that matters.' +
+        '\n2. mitm2openapi\n   Rust rewrite of mitmproxy2swagger — single ~5 MB static binary that converts mitmproxy flow dumps and HAR files to OpenAPI 3.0. No Python, no venv, no pip. Two-step discover → generate workflow with glob filters for fully unattended CI pipelines.' +
+        '\n   [Rust, OpenAPI, mitmproxy, HAR]' +
+
+
+
+        '\n3. High-throughput Data Ingestion (Rust)\n   Chose Rust because Python couldn\'t keep up. Ingests and parses 300 blk/s from distributed event sources in production - hot-path performance where throughput is the only constraint that matters.' +
         '\n   [Rust, PostgreSQL, asyncio]' +
 
 
 
-        '\n3. Distributed Task Orchestration\n   Autonomous system managing 2,000+ wallets with 5,000+ daily transactions - built for a client with multiple investors who needed zero-ops reliability.' +
+        '\n4. Distributed Task Orchestration\n   Autonomous system managing 2,000+ wallets with 5,000+ daily transactions - built for a client with multiple investors who needed zero-ops reliability.' +
         '\n   [Python, Web3.py, asyncio, PostgreSQL, Redis]' +
 
 
 
-        '\n4. Real-time Monitoring Stack\n   From zero monitoring to full observability: Grafana + Victoria Metrics + Loki with per-tenant isolation, custom dashboards, and alerting. Incidents went from \'someone noticed\' to detected-in-minutes.' +
+        '\n5. Real-time Monitoring Stack\n   From zero monitoring to full observability: Grafana + Victoria Metrics + Loki with per-tenant isolation, custom dashboards, and alerting. Incidents went from \'someone noticed\' to detected-in-minutes.' +
         '\n   [Grafana, Victoria Metrics, Loki, Sentry, Kubernetes]' +
 
 
