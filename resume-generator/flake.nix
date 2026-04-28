@@ -26,6 +26,10 @@
       url = "github:TyberiusPrime/uv2nix_hammer_overrides";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    git-hooks-nix = {
+      url = "github:cachix/git-hooks.nix";
+    };
   };
 
   outputs =
@@ -39,6 +43,10 @@
       ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [
+        inputs.git-hooks-nix.flakeModule
+      ];
+
       systems = [
         "x86_64-linux"
         "aarch64-darwin"
@@ -56,6 +64,27 @@
           ...
         }:
         {
+          pre-commit.pkgs = import inputs.git-hooks-nix.inputs.nixpkgs { inherit system; };
+          pre-commit.settings.hooks = {
+            djlint-lint = {
+              enable = true;
+              name = "djlint-lint";
+              entry = "${pkgs.djlint}/bin/djlint --profile jinja --lint --ignore H006,H021,H023,H031";
+              files = "\\.html\\.j2$";
+              types = [ "file" ];
+            };
+            djlint-format = {
+              enable = true;
+              name = "djlint-format";
+              entry = "${pkgs.djlint}/bin/djlint --profile jinja --reformat --format-css --quiet";
+              files = "\\.html\\.j2$";
+              types = [ "file" ];
+            };
+            nixfmt-rfc-style.enable = true;
+            ruff-format.enable = true;
+            ruff.enable = true;
+          };
+
           devShells.default =
             let
               pkgs = import nixpkgs {
@@ -102,19 +131,21 @@
                 virtualenv
                 pkgs.uv
                 pkgs.mdformat
-                pkgs.poetry # Add Poetry for building git dependencies
-                # Additional development tools
+                pkgs.djlint
+                pkgs.poetry
                 pkgs.git
                 pkgs.htop
                 pkgs.tree
                 pythonPackages.pylance
                 pythonPackages.pylint
                 pythonPackages.ruff
-              ];
+              ]
+              ++ config.pre-commit.settings.enabledPackages;
 
               NIX_LD_LIBRARY_PATH = makeLibraryPath libs;
 
               shellHook = ''
+                ${config.pre-commit.installationScript}
                 # Undo dependency propagation by nixpkgs.
                 unset SOURCE_DATE_EPOCH
                 unset PYTHONPATH

@@ -160,6 +160,7 @@ cython_debug/
 
 .direnv/
 .venv
+.pre-commit-config.yaml
 .vscode/settings.json
 .kilocode/
 .ruff_cache/

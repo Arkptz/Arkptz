@@ -61,6 +61,7 @@ ignore = [
     "RUF001",  # String contains ambiguous characters
     "RUF002",  # Docstring contains ambiguous characters
     "RUF003",  # Comment contains ambiguous characters
+    "EXE001",  # Shebang without executable bit (Nix sandbox strips permissions)
 ]
 fixable = ["ALL"]
 
@@ -68,3 +69,14 @@ fixable = ["ALL"]
 quote-style = "double"
 indent-style = "space"
 line-ending = "auto"
+
+[tool.djlint]
+profile = "jinja"
+extension = "html.j2"
+indent = 2
+max_line_length = 120
+preserve_blank_lines = true
+format_css = true
+format_js = false
+# H006=img size attrs, H021=inline styles, H023=entity refs, H031=meta keywords
+ignore = "H006,H021,H023,H031"
