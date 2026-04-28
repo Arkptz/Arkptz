@@ -120,12 +120,12 @@
               libs = with pkgs; [
                 openssl
                 stdenv.cc.cc.lib
-
               ];
-              # Enable all optional dependencies for development.
               virtualenv = editablePythonSet.mkVirtualEnv "arkptz-dev-env" workspace.deps.all;
             in
             pkgs.mkShell {
+              NIX_LD_LIBRARY_PATH = makeLibraryPath libs;
+
               packages = [
                 pkgs.nixfmt-rfc-style
                 virtualenv
@@ -142,14 +142,11 @@
               ]
               ++ config.pre-commit.settings.enabledPackages;
 
-              NIX_LD_LIBRARY_PATH = makeLibraryPath libs;
-
               shellHook = ''
                 ${config.pre-commit.installationScript}
-                # Undo dependency propagation by nixpkgs.
                 unset SOURCE_DATE_EPOCH
                 unset PYTHONPATH
-                export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH:$LD_LIBRARY_PATH
+
 
                 # Get repository root using git. This is expanded at runtime by the editable `.pth` machinery.
                 export REPO_ROOT=$(git rev-parse --show-toplevel)
@@ -170,7 +167,7 @@
                 export UV_PYTHON=$(which python)
                 # Stop uv from downloading python
                 export UV_PYTHON_DOWNLOADS=never
-                ln -sfT ${virtualenv.out} ./.venv
+                rm -rf ./.venv 2>/dev/null; ln -sfT ${virtualenv.out} ./.venv
 
               '';
             };

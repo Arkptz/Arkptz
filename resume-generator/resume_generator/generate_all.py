@@ -8,12 +8,12 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from .generate_backend_crypto import generate as gen_backend_crypto
 from .generate_backend_traditional import generate as gen_backend_traditional
+from .generate_cto import generate as gen_cto
+from .generate_linkedin import generate as gen_linkedin
+from .generate_portfolio import generate as gen_portfolio
+from .generate_readme import generate as gen_readme
 from .generate_techlead_crypto import generate as gen_techlead_crypto
 from .generate_techlead_traditional import generate as gen_techlead_traditional
-from .generate_cto import generate as gen_cto
-from .generate_readme import generate as gen_readme
-from .generate_portfolio import generate as gen_portfolio
-from .generate_linkedin import generate as gen_linkedin
 
 
 def main():

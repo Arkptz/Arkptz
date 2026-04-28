@@ -62,6 +62,14 @@ ignore = [
     "RUF002",  # Docstring contains ambiguous characters
     "RUF003",  # Comment contains ambiguous characters
     "EXE001",  # Shebang without executable bit (Nix sandbox strips permissions)
+    "S701",    # Jinja2 autoescape=False (intentional, we generate static HTML)
+    "DTZ011",  # date.today() without tz (not needed for sitemap lastmod)
+    "C901",    # Function complexity (pre-existing PDF generator)
+    "PLR0912", # Too many branches (pre-existing PDF generator)
+    "PLR0913", # Too many arguments (pre-existing PDF generator)
+    "SIM108",  # Ternary operator suggestion (readability preference)
+    "PTH123",  # Path.open vs open() (style preference)
+    "PERF401", # List comprehension (style preference)
 ]
 fixable = ["ALL"]
 

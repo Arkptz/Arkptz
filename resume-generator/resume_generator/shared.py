@@ -3,12 +3,12 @@
 import json
 from pathlib import Path
 
-from reportlab.lib.pagesizes import A4
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.lib.units import inch
 from reportlab.lib.colors import HexColor
 from reportlab.lib.enums import TA_CENTER, TA_JUSTIFY
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, HRFlowable
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
+from reportlab.lib.units import inch
+from reportlab.platypus import HRFlowable, Paragraph, SimpleDocTemplate, Spacer
 
 # Colors
 PRIMARY = HexColor("#1a1a2e")
@@ -36,7 +36,7 @@ def build_styles():
             textColor=ACCENT,
             alignment=TA_CENTER,
             spaceAfter=6,
-        )
+        ),
     )
     styles.add(
         ParagraphStyle(
@@ -46,7 +46,7 @@ def build_styles():
             textColor=PRIMARY,
             fontName="Helvetica-Bold",
             spaceAfter=2,
-        )
+        ),
     )
     styles.add(
         ParagraphStyle(
@@ -56,7 +56,7 @@ def build_styles():
             textColor=ACCENT,
             fontName="Helvetica-Bold",
             spaceAfter=6,
-        )
+        ),
     )
     styles.add(
         ParagraphStyle(
@@ -66,7 +66,7 @@ def build_styles():
             textColor=GREY,
             fontName="Helvetica",
             spaceAfter=2,
-        )
+        ),
     )
     styles.add(
         ParagraphStyle(
@@ -77,7 +77,7 @@ def build_styles():
             fontName="Helvetica-Bold",
             spaceBefore=10,
             spaceAfter=5,
-        )
+        ),
     )
     styles.add(
         ParagraphStyle(
@@ -88,7 +88,7 @@ def build_styles():
             fontName="Helvetica-Bold",
             spaceBefore=7,
             spaceAfter=1,
-        )
+        ),
     )
     styles.add(
         ParagraphStyle(
@@ -98,7 +98,7 @@ def build_styles():
             textColor=ACCENT,
             fontName="Helvetica",
             spaceAfter=3,
-        )
+        ),
     )
     styles.add(
         ParagraphStyle(
@@ -109,7 +109,7 @@ def build_styles():
             fontName="Helvetica",
             leftIndent=12,
             spaceAfter=1.5,
-        )
+        ),
     )
     styles.add(
         ParagraphStyle(
@@ -120,7 +120,7 @@ def build_styles():
             fontName="Helvetica",
             alignment=TA_JUSTIFY,
             spaceAfter=4,
-        )
+        ),
     )
     styles.add(
         ParagraphStyle(
@@ -130,7 +130,7 @@ def build_styles():
             textColor=TEXT,
             fontName="Helvetica",
             spaceAfter=1.5,
-        )
+        ),
     )
     return styles
 
@@ -179,7 +179,7 @@ def add_skills(story, data, skill_keys, styles):
                 Paragraph(
                     f"<b>{s['label']}:</b> {', '.join(s['items'])}",
                     styles["SkillLine"],
-                )
+                ),
             )
 
 
@@ -232,7 +232,7 @@ def add_experience(story, data, resume_name, title_variant, styles, max_bullets=
                 Paragraph(
                     f"<b>Tech:</b> {', '.join(tech_list)}",
                     styles["BulletItem"],
-                )
+                ),
             )
 
 
@@ -251,7 +251,7 @@ def add_education(story, data, styles):
             Paragraph(
                 f"<b>{edu['title']}</b> - {edu['institution']} ({edu['status']})",
                 styles["BulletItem"],
-            )
+            ),
         )
 
 
@@ -262,5 +262,5 @@ def add_languages(story, data, styles):
         Paragraph(
             f"Russian: {lang['russian']} | English: {lang['english']}",
             styles["BulletItem"],
-        )
+        ),
     )
