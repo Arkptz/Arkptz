@@ -60,7 +60,7 @@ nav{position:fixed;top:0;left:0;right:0;padding:12px 24px;background:rgba(5,5,8,
 .nav-links a:hover{color:var(--amber)}
 .terminal-toggle{font-size:11px;color:var(--green);background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.2);border-radius:4px;padding:4px 10px;cursor:pointer;transition:all .2s;font-family:var(--mono)}
 .terminal-toggle:hover{background:rgba(74,222,128,0.15);border-color:rgba(74,222,128,0.4)}
-@media(max-width:640px){.nav-links a:not(.terminal-toggle-wrap){display:none}}
+@media(max-width:640px){.nav-links a{display:none}}
 
 /* Hero */
 header.hero{padding:100px 0 48px}
@@ -76,8 +76,15 @@ header.hero{padding:100px 0 48px}
 
 /* Resume buttons */
 .resume-row{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
-.resume-btn{font-size:11px;color:var(--purple);text-decoration:none;padding:5px 14px;border:1px solid rgba(167,139,250,0.25);border-radius:4px;transition:all .2s;font-weight:500;font-family:var(--mono)}
-.resume-btn:hover{background:rgba(167,139,250,0.1);border-color:rgba(167,139,250,0.5)}
+.resume-drop{position:relative;display:inline-block}
+.resume-toggle{font-size:11px;color:var(--purple);padding:5px 14px;border:1px solid rgba(167,139,250,0.25);border-radius:4px;transition:all .2s;font-weight:500;font-family:var(--mono);cursor:pointer;background:transparent;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+.resume-toggle:hover{background:rgba(167,139,250,0.1);border-color:rgba(167,139,250,0.5)}
+.resume-toggle svg{width:10px;height:10px;transition:transform .2s}
+.resume-drop.open .resume-toggle svg{transform:rotate(180deg)}
+.resume-menu{position:absolute;top:calc(100% + 4px);left:0;min-width:180px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:4px 0;opacity:0;visibility:hidden;transform:translateY(-4px);transition:all .15s;z-index:100;box-shadow:0 8px 24px rgba(0,0,0,0.3)}
+.resume-drop.open .resume-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.resume-menu a{display:block;padding:6px 14px;font-size:11px;color:var(--text-dim);text-decoration:none;font-family:var(--mono);transition:all .15s}
+.resume-menu a:hover{color:var(--purple);background:rgba(167,139,250,0.06)}
 
 /* Metrics */
 .metrics-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px;margin-top:28px;padding:16px;background:var(--bg-hover);border:1px solid var(--border);border-radius:6px}
@@ -101,8 +108,10 @@ header.hero{padding:100px 0 48px}
 .cd{color:var(--text-dim);font-size:12px}
 .cm{color:var(--text);font-weight:600;font-size:13px;margin-left:4px}
 .cc{color:var(--text-dim);font-size:12px;font-weight:400;margin-top:2px}
-.commit-hint{position:absolute;right:16px;top:18px;font-size:10px;color:var(--text-faint);transition:opacity .2s}
-.commit.exp .commit-hint{opacity:0}
+.commit-hint{position:absolute;right:16px;top:18px;color:var(--text-faint);transition:all .2s}
+.commit-hint svg{width:14px;height:14px;transition:transform .3s}
+.commit.exp .commit-hint svg{transform:rotate(180deg)}
+.commit:hover .commit-hint{color:var(--amber)}
 .tag-row{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
 .tag{font-size:10px;padding:2px 8px;border-radius:3px;background:rgba(6,182,212,0.08);color:var(--cyan);border:1px solid rgba(6,182,212,0.15)}
 .commit-details{max-height:0;overflow:hidden;transition:max-height .5s ease}
@@ -209,11 +218,11 @@ footer{padding:40px 0 60px;border-top:1px solid var(--border);text-align:center}
   </div>
 
   <div class="resume-row">
-    <a class="resume-btn" href="{{ resume_base }}{{ fname }}_Resume_Backend_Crypto.pdf" download>Backend (Crypto)</a>
-    <a class="resume-btn" href="{{ resume_base }}{{ fname }}_Resume_Backend.pdf" download>Backend</a>
-    <a class="resume-btn" href="{{ resume_base }}{{ fname }}_Resume_TechLead_Crypto.pdf" download>Tech Lead (Crypto)</a>
-    <a class="resume-btn" href="{{ resume_base }}{{ fname }}_Resume_TechLead.pdf" download>Tech Lead</a>
-    <a class="resume-btn" href="{{ resume_base }}{{ fname }}_Resume_CTO.pdf" download>CTO</a>
+    <div class="resume-drop" id="resume-drop">
+      <a class="resume-toggle" href="{{ resume_base }}{{ fname }}_Resume_Backend.pdf" download role="button" aria-haspopup="true" aria-expanded="false">Download Resume <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></a>
+      <div class="resume-menu" role="menu"></div>
+    </div>
+    <noscript><a class="resume-toggle" href="{{ resume_base }}{{ fname }}_Resume_Backend.pdf" download style="text-decoration:none">Download Resume (PDF)</a></noscript>
   </div>
 
   <div class="metrics-bar">
@@ -229,7 +238,7 @@ footer{padding:40px 0 60px;border-top:1px solid var(--border);text-align:center}
   <h2 class="section-title">Work Experience</h2>
 
   {% for job in data.experience %}
-  <article class="commit{% if loop.first %} hl{% endif %}" onclick="this.classList.toggle('exp')">
+  <article class="commit{% if loop.first %} hl{% endif %}" tabindex="0" role="button" aria-expanded="false" onclick="this.classList.toggle('exp');this.setAttribute('aria-expanded',this.classList.contains('exp'))" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
     <div class="commit-dot"></div>
     <div class="commit-header">
       <span class="ch">{{ commit_hashes[loop.index0 % commit_hashes|length] }}</span>
@@ -237,7 +246,7 @@ footer{padding:40px 0 60px;border-top:1px solid var(--border);text-align:center}
       <span class="cm">{{ job.titles.portfolio }}</span>
     </div>
     <div class="cc">{{ job.company }}{% if job.product is string %} &mdash; {{ job.product }}{% endif %}{% if job.location %} &middot; {{ job.location }}{% endif %}</div>
-    <div class="commit-hint">expand</div>
+    <div class="commit-hint"><svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></div>
     <div class="commit-details"><div class="commit-body">
       <ul class="cb-list">
         {% for bullet in job.bullets %}
@@ -510,14 +519,76 @@ Type "help" for available commands.
 document.addEventListener('DOMContentLoaded', function() {
   var YM_ID = {{ data.analytics.yandex_metrika_id }};
 
-  document.querySelectorAll('.resume-btn, a[download]').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      ym(YM_ID, 'reachGoal', 'resume_download', {
-        type: this.textContent.trim(),
-        href: this.getAttribute('href')
+  // Resume dropdown (built from JS — no resume links in static HTML)
+  var base = '{{ resume_base }}';
+  var resumeTypes = [
+    { key: 'backend-crypto', label: 'Backend (Crypto)', file: '{{ fname }}_Resume_Backend_Crypto.pdf' },
+    { key: 'backend', label: 'Backend', file: '{{ fname }}_Resume_Backend.pdf' },
+    { key: 'techlead-crypto', label: 'Tech Lead (Crypto)', file: '{{ fname }}_Resume_TechLead_Crypto.pdf' },
+    { key: 'techlead', label: 'Tech Lead', file: '{{ fname }}_Resume_TechLead.pdf' },
+    { key: 'cto', label: 'CTO', file: '{{ fname }}_Resume_CTO.pdf' }
+  ];
+
+  var drop = document.getElementById('resume-drop');
+  var params = new URLSearchParams(window.location.search);
+  var resumeParam = params.get('resume');
+
+  if (drop) {
+    var toggle = drop.querySelector('.resume-toggle');
+    var menu = drop.querySelector('.resume-menu');
+
+    // Find UTM match
+    var utmType = resumeParam ? resumeTypes.filter(function(t) { return t.key === resumeParam; })[0] : null;
+
+    if (utmType) {
+      // UTM mode: direct download, no menu
+      toggle.href = base + utmType.file;
+      toggle.removeAttribute('aria-haspopup');
+      toggle.removeAttribute('aria-expanded');
+      toggle.querySelector('svg').style.display = 'none';
+      toggle.addEventListener('click', function() {
+        ym(YM_ID, 'reachGoal', 'resume_download', { type: utmType.key, source: 'utm', href: toggle.href });
       });
-    });
-  });
+    } else {
+      // Build menu items from JS
+      resumeTypes.forEach(function(t) {
+        var a = document.createElement('a');
+        a.href = base + t.file;
+        a.download = t.file;
+        a.setAttribute('data-resume', t.key);
+        a.setAttribute('role', 'menuitem');
+        a.textContent = t.label;
+        menu.appendChild(a);
+      });
+
+      function openMenu() { drop.classList.add('open'); toggle.setAttribute('aria-expanded', 'true'); }
+      function closeMenu() { drop.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        drop.classList.contains('open') ? closeMenu() : openMenu();
+      });
+      toggle.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeMenu();
+        if (e.key === 'ArrowDown') { e.preventDefault(); openMenu(); var first = menu.querySelector('a'); if (first) first.focus(); }
+      });
+      menu.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') { closeMenu(); toggle.focus(); }
+      });
+      document.addEventListener('click', function() { closeMenu(); });
+      menu.addEventListener('click', function(e) { e.stopPropagation(); });
+      menu.querySelectorAll('a').length || null; // items added above
+      // Use MutationObserver-free approach: attach after build
+      menu.addEventListener('click', function(e) {
+        var link = e.target.closest('a[data-resume]');
+        if (link) {
+          closeMenu();
+          ym(YM_ID, 'reachGoal', 'resume_download', { type: link.getAttribute('data-resume'), source: 'dropdown', href: link.href });
+        }
+      });
+    }
+  }
 
   var contactLinks = {
     'github.com': 'click_github',
